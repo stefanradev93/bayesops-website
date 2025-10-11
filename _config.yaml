@@ -9,9 +9,9 @@ proofer: false
 # site social media and other links
 links:
   email: radevs@rpi.edu
-  google-scholar: https://scholar.google.com/citations?user=JbDfkRkAAAAJ&hl=en
-  github: https://github.com/bayesflow-org/bayesflow
-  bluesky: https://bsky.app/profile/bayesflow.org
+  google-scholar: JbDfkRkAAAAJ&hl=en
+  github: bayesflow-org/bayesflow
+  bluesky: bayesflow.org
 
 ### jekyll settings
 
