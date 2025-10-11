@@ -5,6 +5,6 @@
 
   # stefanradev93's Website
 
-  Visit **[stefanradev93.github.io/bayesops-website](https://stefanradev93.github.io/bayesops-website)** 🚀
+  Visit **[www.bayesops.com](http://www.bayesops.com)** 🚀
 
   _Built with [Lab Website Template](https://greene-lab.gitbook.io/lab-website-template-docs)_
