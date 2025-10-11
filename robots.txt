@@ -1,1 +1,1 @@
-Sitemap: http://bayesops.com/sitemap.xml
+Sitemap: https://stefanradev93.github.io/bayesops-website/sitemap.xml
