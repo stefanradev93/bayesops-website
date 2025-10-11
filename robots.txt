@@ -1,1 +1,1 @@
-Sitemap: http://bayesops.com/sitemap.xml
+Sitemap: https://bayesops.com/sitemap.xml
