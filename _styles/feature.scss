@@ -5,7 +5,7 @@ $wrap: 800px;
 
 .feature {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   gap: 40px;
   margin: 40px 0;
@@ -32,14 +32,16 @@ $wrap: 800px;
 
 .feature-title {
   font-size: var(--large);
-  text-align: center;
+  text-align: left;
   font-family: var(--heading);
   font-weight: var(--semi-bold);
 }
 
+/*
 .feature[data-flip] {
   flex-direction: row-reverse;
 }
+  */
 
 @media (max-width: $wrap) {
   .feature {
@@ -51,3 +53,4 @@ $wrap: 800px;
     max-width: calc($wrap / 2);
   }
 }
+

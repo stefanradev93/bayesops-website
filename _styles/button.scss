@@ -6,22 +6,23 @@ button {
 }
 
 .button-wrapper {
-  display: contents;
+  display: block;
+  text-align: left
 }
 
 .button {
   display: inline-flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   gap: 10px;
   max-width: calc(100% - 5px - 5px);
-  margin: 5px;
-  padding: 8px 15px;
+  margin: 5px 0px;
+  padding: 8px 0px;
   border: none;
   border-radius: var(--rounded);
   background: var(--primary);
   color: var(--background);
-  text-align: center;
+  text-align: left;
   font: inherit;
   font-family: var(--heading);
   font-weight: var(--semi-bold);
@@ -37,7 +38,7 @@ button {
 }
 
 .button[data-style="bare"] {
-  padding: 5px;
+  padding: 0px;
   background: none;
   color: var(--primary);
 
