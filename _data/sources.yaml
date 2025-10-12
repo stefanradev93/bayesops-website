@@ -1,23 +1,19 @@
-- id: doi:10.1371/journal.pcbi.1007128
+- id: arXiv:2502.04949
   type: paper
-  description: Lorem ipsum _dolor_ **sit amet**, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  date: 2020-12-4
-  image: https://journals.plos.org/ploscompbiol/article/figure/image?size=inline&id=info:doi/10.1371/journal.pcbi.1007128.g001&rev=2
+  description: >
+    Neural networks are fragile when confronted with data that significantly deviates from their training distribution. 
+    This is true in particular for simulation-based inference methods, such as neural amortized Bayesian inference (ABI), 
+    where models trained on simulated data are deployed on noisy real-world observations. Recent robust approaches employ 
+    unsupervised domain adaptation (UDA) to match the embedding spaces of simulated and observed data. However, the lack of 
+    comprehensive evaluations across different domain mismatches raises concerns about the reliability in high-stakes applications. 
+    We address this gap by systematically testing UDA approaches across a wide range of misspecification scenarios in silico and practice. We demonstrate that aligning summary spaces between domains effectively mitigates the impact of unmodeled phenomena or noise. However, the same alignment mechanism can lead to failures under prior misspecifications - a critical finding with practical consequences. Our results underscore the need for careful consideration of misspecification types when using UDA to increase the robustness of ABI.
+  image: https://github.com/bayesflow-org/NPE-UDA/blob/main/img/main_figure.png
   buttons:
-    - type: manubot
-      link: https://greenelab.github.io/meta-review/
     - type: source
-      text: Manuscript Source
-      link: https://github.com/greenelab/meta-review
-    - type: website
-      link: http://manubot.org/
+      link: https://github.com/bayesflow-org/NPE-UDA
   tags:
-    - open science
-    - collaboration
-  repo: greenelab/meta-review
-
-- id: doi:10.1016/j.csbj.2020.05.017
-  image: https://ars.els-cdn.com/content/image/1-s2.0-S2001037020302804-gr1.jpg
-
-- id: doi:10.7554/eLife.32822
-  image: https://iiif.elifesciences.org/lax:32822%2Felife-32822-fig8-v3.tif/full/863,/0/default.webp
+    - simulation-based inference
+    - robustness
+    - unsupervised domain adaptation
+    - Bayesian inference
+  

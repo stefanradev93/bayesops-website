@@ -2,7 +2,7 @@
 
 # team member roles
 
-principal-investigator:
+pa:
   icon: fa-solid fa-microscope
   description: Principal Investigator
 
@@ -18,13 +18,9 @@ undergrad:
   icon: fa-solid fa-user-graduate
   description: Undergraduate Student
 
-programmer:
-  icon: fa-solid fa-code
-  description: Programmer
-
-mascot:
-  icon: fa-solid fa-dog
-  description: Mascot
+affiliate:
+  icon: fa-solid fa-affiliate
+  description: Affiliate Member
 
 # general
 
