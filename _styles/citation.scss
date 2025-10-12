@@ -1,15 +1,14 @@
 ---
 ---
 
-$thumb-size: 180px;
-$wrap: 800px;
-
 .citation-container {
   container-type: inline-size;
 }
 
 .citation {
   display: flex;
+  flex-direction: column;
+  align-items: stretch;
   margin: 20px 0;
   border-radius: var(--rounded);
   background: var(--background);
@@ -19,17 +18,27 @@ $wrap: 800px;
 
 .citation-image {
   position: relative;
-  width: $thumb-size;
+  // uncomment for left-align
+  // width: 90%;
+  // height: auto;
+  // flex-shrink: 0;
+  // padding-left: 30px;
+  // padding-top: 20px;
+  // box-sizing: border-box;
+  width: 95%;
+  height: auto;
   flex-shrink: 0;
-  // box-shadow: var(--shadow);
+  margin: 20px auto 0 auto;
+  box-sizing: border-box;
 }
 
 .citation-image img {
-  position: absolute;
-  inset: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: contain;
+  // object-position: left top;
+  object-position: center top;
+  display: block;
 }
 
 .citation-text {
@@ -91,13 +100,13 @@ $wrap: 800px;
   margin: 0;
 }
 
-@container (max-width: #{$wrap}) {
-  .citation {
-    flex-direction: column;
-  }
+// @container (max-width: #{800px}) {
+//   .citation {
+//     flex-direction: column;
+//   }
 
-  .citation-image {
-    width: unset;
-    height: $thumb-size;
-  }
-}
+//   .citation-image {
+//     width: unset;
+//     height: 180px;
+//   }
+// }

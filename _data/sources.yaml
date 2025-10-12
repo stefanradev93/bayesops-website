@@ -1,21 +1,198 @@
+- id: arXiv:2505.14429
+  type: paper
+  description: >
+    Hierarchical Bayesian modeling is the default approach in Bayesian analysis. However, existing Bayesian methods struggle to fit 
+    hierarchical models with many parameters on massive data sets. To address this issue, we develop a divide-and-conquer method based 
+    on score-based diffusion models. Our method scales to hundreds of thousands of parameters and enables fully Bayesian fluoresence 
+    lifetime imaging (FLI) under low signal-to-noise conditions.
+  image: images/research/compositional-modeling.jpg
+  # buttons:
+  #   - type: source
+  #     link: https://github.com/bayesflow-org/NPE-UDA
+  tags:
+    - simulation-based inference
+    - diffusion models
+    - Bayesian inference
+    - amortized inference
+    - hierarchical Bayesian models
+
 - id: arXiv:2502.04949
   type: paper
   description: >
     Neural networks are fragile when confronted with data that significantly deviates from their training distribution. 
-    This is true in particular for simulation-based inference methods, such as neural amortized Bayesian inference (ABI), 
-    where models trained on simulated data are deployed on noisy real-world observations. Recent robust approaches employ 
-    unsupervised domain adaptation (UDA) to match the embedding spaces of simulated and observed data. However, the lack of 
-    comprehensive evaluations across different domain mismatches raises concerns about the reliability in high-stakes applications. 
-    We address this gap by systematically testing UDA approaches across a wide range of simulation gaps in silico and practice. 
-    We demonstrate that aligning summary spaces between domains effectively mitigates the impact of unmodeled phenomena or noise. 
-    However, the same alignment mechanism can lead to failures under prior misspecifications - a critical finding with practical 
-    consequences. Our results underscore the need for careful consideration of misspecification types when using UDA to increase 
-    the robustness of ABI.
+    This is true in particular for models trained on simulated data and deployed for inference on real-world observations. 
+    We formalize the targets of trustworthy inference and systematically test unsupervised domain adaptation (UDA) methods 
+    that align embeddings of simulated and real data. We find that UDA reduces noise-related errors, but can cause unexpected 
+    failures when the model's prior assumptions are wrong.
+  image: images/research/uda.jpg
   buttons:
     - type: source
       link: https://github.com/bayesflow-org/NPE-UDA
+    - type: paper
+      text: TMLR (OpenReview)
+      link: https://openreview.net/forum?id=ewgLuvnEw6
+    - type: website
+      text: ICLR (Frontiers in Probabilistic Inference Workshop)
+      link: https://iclr.cc/virtual/2025/workshop/23990
   tags:
     - simulation-based inference
     - Bayesian inference
     - amortized inference
-    - robust inference
+    - trustworthy inference
+    - simulation gaps
+
+- id: arXiv:2503.24011
+  type: paper
+  description: >
+    Simulations play important and diverse roles in statistical workflows, for example, in model specification, checking, validation, 
+    and inference. Over the past decades, the application areas and overall potential of simulations in statistical workflows have expanded significantly, driven by the development of new AI-assisted methods and exponentially increasing computational resources. 
+    In this paper, we examine past and current trends in the field and offer perspectives on how simulations may shape the future of statistical practice.
+  image: images/research/simulations-workflow.jpg
+  tags:
+    - simulation
+    - simulation-based inference
+    - Bayesian inference
+    - Bayesian workflow
+    - amortized inference
+
+- id: 10.31219/osf.io/ge83u
+  type: paper
+  description: >
+    Cognitive models can estimate latent parameters from reaction time and accuracy data, capturing aspects like processing speed 
+    and decision caution. We examined how these parameters relate to real-world outcomes—education, income, and job prestige—in a 
+    large online sample. While overall effects were small, variability in processing speed (drift rate) was the strongest 
+    and most consistent predictor, highlighting the value of behavioral data science for generating new hypotheses about overlooked measures in cognitive modeling.
+  image: images/research/big-data.jpg
+  tags:
+    - cognitive modeling
+    - simulation-based inference
+    - Bayesian inference
+    - big data
+    - decision making
+
+- id: arXiv:2312.05440
+  type: paper
+  description: >
+    We present consistency models for posterior estimation (CMPE), a new free-form generative model family grounded in diffusion model theory.
+    CMPE enables rapid few-shot inference with an unconstrained architecture that can be flexibly tailored to the model's symmetry. We provide 
+    hyperparameters that support consistency training over a wide range of different dimensions, including low-dimensional ones which are 
+    important in simulaton-based inference but were previously difficult to tackle.
+  image: images/research/cmpe.jpg
+  buttons:
+  - type: source
+    link: https://github.com/bayesflow-org/cmpe
+  - type: website
+    text: NeurIPS (Main Track)
+    link: https://neurips.cc/virtual/2024/poster/95775
+  tags:
+    - simulation-based inference
+    - Bayesian inference
+    - consistency models
+    - diffusion models
+    - generative models
+
+- id: arXiv:2310.04395
+  type: paper
+  description: >
+    We improve amortized Bayesian inference by inverting Bayes' theorem to estimate the implicit model evidence. We leverage the 
+    observation that deviations from constant evidence reveal approximation errors, which we penalize through a novel self-consistency loss. 
+    This loss improves inference quality in low-data regimes and boosts the training of neural density estimators across synthetic and real-world models.
+  image: images/research/self-consistency.jpg
+  buttons:
+  - type: source
+    link: https://github.com/bayesflow-org/self-consistency-abi
+  - type: website
+    text: ICML (Main Track)
+    link: https://icml.cc/virtual/2024/poster/34900
+  - type: website
+    text: NeurIPS (UniReps Workshop)
+    link: https://neurips.cc/virtual/2023/workshop/66494
+  tags:
+    - simulation-based inference
+    - Bayesian inference
+    - data-efficient inference
+    - self-consistency
+    - evidence
+
+- id: arXiv:2310.11122
+  type: paper
+  description: >
+    Sensitivity analyses can reveal how different modeling choices affect statistical results, but they're often too slow for complex 
+    Bayesian models. We introduce sensitivity-aware amortized Bayesian inference (SA-ABI) as an efficient method that (1) uses weight 
+    sharing to capture similarities between model versions with little extra cost, (2) exploits the speed of neural networks to 
+    test sensitivity to data and preprocessing changes, and (3) applies deep ensembles to spot sensitivity caused by poor fit. 
+    Our experiments show that SA-ABI can provide automatic insights into hidden uncertainties.
+  image: images/research/sensitivity-aware-sbi.jpg
+  buttons:
+  - type: source
+    link: https://github.com/bayesflow-org/SA-ABI
+  - type: paper
+    text: TMLR (OpenReview)
+    link: https://openreview.net/forum?id=Kxtpa9rvM0
+  - type: website
+    text: ICLR (Main Track)
+    link: https://iclr.cc/virtual/2025/poster/31469
+  tags:
+    - simulation-based inference
+    - Bayesian inference
+    - sensitivity analysis
+    - trustworthy inference
+    - deep ensembles
+
+- id: arXiv:2406.03154
+  type: paper
+  description: >
+    Generative AI enables efficient simulation-based inference (SBI) for complex models. But how faithful is such inference if the simulation 
+    represents reality somewhat inaccurately? We conceptualize the types of simulation gaps arising in SBI and investigate how neural network 
+    outputs gradually deteriorate as a consequence. To notify users about this problem, we propose a new measure that can be trained in an unsupervised way. 
+    We show that our measure warns users about suspicious outputs, raises an alarm when predictions are not trustworthy, and guides model designers in their search for better simulators.
+  image: images/research/simulation-gaps.jpg
+  buttons:
+  - type: source
+    link: https://github.com/marvinschmitt/ModelMisspecificationBF
+  - type: website
+    text: GCPR (Main Track)
+    link: https://link.springer.com/chapter/10.1007/978-3-031-54605-1_35
+  tags:
+    - simulation-based inference
+    - Bayesian inference
+    - simulation gaps
+    - trustworthy inference
+    - model misspecification
+
+- id: 10.1007/s42113-024-00218-4
+  type: paper
+  description: >
+    Cognitive processes naturally fluctuate over time, and *superstatistics* offer a flexible way to capture these non-stationary dynamics 
+    in cognitive models. We provide the first experimental validation of this approach by comparing four time-varying diffusion decision 
+    models in a perceptual task with controlled difficulty and speed-accuracy conditions. Using deep learning for efficient Bayesian estimation,
+    we find that models allowing both gradual and abrupt parameter changes best match the data, suggesting that the inferred dynamics reflect 
+    genuine shifts in cognitive states.
+  image: images/research/non-stationary.jpg
+  buttons:
+  - type: source
+    link: https://github.com/bayesflow-org/Non-Stationary-DDM-Validation
+  tags:
+    - superstatistics
+    - simulation-based inference
+    - Bayesian inference
+    - cognitive modeling
+    - decision making
+
+- id: 10.1037/met0000645
+  type: paper
+  description: >
+    Bayesian model comparison (BMC) is a formal way to assess the relative merits of competing computational models. However, BMC is often intractable for hierarchical models due to their large number of parameters. 
+    To address this issue, we propose a deep learning method for performing BMC on any set of hierarchical models that can be instantiated as probabilistic programs. 
+    In addition to unlocking the ability to compare previously intractable models, our method enables re-estimation of model probabilities and fast performance 
+    validation prior to any real-data application.
+  image: images/research/model-comparison.jpg
+  buttons:
+  - type: source
+    link: https://github.com/bayesflow-org/Hierarchical-Model-Comparison
+  tags:
+    - hierarchical Bayesian models
+    - simulation-based inference
+    - Bayesian inference
+    - cognitive modeling
+    - model comparison
