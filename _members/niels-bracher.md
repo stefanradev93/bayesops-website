@@ -1,6 +1,6 @@
 ---
 name: Niels Bracher
-image: images/photo.jpg
+image: images/members/niels-bracher.jpg
 role: phd
 group: graduate-students
 links:

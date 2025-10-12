@@ -1,6 +1,6 @@
 ---
 name: Stefan T. Radev
-image: images/photo.jpg
+image: images/members/stefan-radev.jpg
 role: pi
 aliases:
   - S.T. Radev

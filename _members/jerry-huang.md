@@ -1,6 +1,6 @@
 ---
 name: Jerry M. Huang
-image: images/photo.jpg
+image: images/members/jerry-huang.jpg
 description: Postdoctoral Researcher
 role: postdoc
 links:
