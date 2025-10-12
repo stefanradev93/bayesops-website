@@ -7,7 +7,6 @@
     unsupervised domain adaptation (UDA) to match the embedding spaces of simulated and observed data. However, the lack of 
     comprehensive evaluations across different domain mismatches raises concerns about the reliability in high-stakes applications. 
     We address this gap by systematically testing UDA approaches across a wide range of misspecification scenarios in silico and practice. We demonstrate that aligning summary spaces between domains effectively mitigates the impact of unmodeled phenomena or noise. However, the same alignment mechanism can lead to failures under prior misspecifications - a critical finding with practical consequences. Our results underscore the need for careful consideration of misspecification types when using UDA to increase the robustness of ABI.
-  image: https://github.com/bayesflow-org/NPE-UDA/blob/main/img/main_figure.png
   buttons:
     - type: source
       link: https://github.com/bayesflow-org/NPE-UDA

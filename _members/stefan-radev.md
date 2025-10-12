@@ -2,12 +2,11 @@
 name: Stefan T. Radev
 image: images/photo.jpg
 role: pi
-affiliation: Rensselaer Polytechnic Institute
 aliases:
   - S.T. Radev
 links:
   home-page: https://faculty.rpi.edu/stefan-radev
-  orcid: 0000-0001-8713-9213
+  google-scholar: JbDfkRkAAAAJ&hl=en
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

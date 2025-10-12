@@ -15,13 +15,12 @@ These two streams converge at our BayesFlow framework for Bayesian inference wit
 
 {% include section.html %}
 
+{% comment %}
 ## Highlighted
+{% include section.html %} 
+{% endcomment %}
 
-{% include citation.html lookup="Open collaborative writing with Manubot" style="rich" %}
-
-{% include section.html %}
-
-## All
+## Recent Papers
 
 {% include search-box.html %}
 
