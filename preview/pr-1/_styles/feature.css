@@ -36,7 +36,7 @@
 .feature[data-flip] {
   flex-direction: row-reverse;
 }
-  */
+*/
 @media (max-width: 800px) {
   .feature {
     flex-direction: column !important;
