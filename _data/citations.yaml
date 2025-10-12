@@ -4,11 +4,11 @@
   title: Does Unsupervised Domain Adaptation Improve the Robustness of Amortized Bayesian
     Inference? A Systematic Evaluation
   authors:
-  - "Lasse Elsemüller"
+  - "Lasse Elsem\xC3\xBCller"
   - Valentin Pratz
   - Mischa von Krause
   - Andreas Voss
-  - "Paul-Christian Bürkner"
+  - "Paul-Christian B\xC3\xBCrkner"
   - Stefan T. Radev
   publisher: arXiv
   date: '2025-05-21'
