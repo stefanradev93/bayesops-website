@@ -1,5 +1,35 @@
 # DO NOT EDIT, GENERATED AUTOMATICALLY
 
+- id: arXiv:2505.14429
+  title: Compositional amortized inference for large-scale hierarchical Bayesian models
+  authors:
+  - Jonas Arruda
+  - Vikas Pandey
+  - Catherine Sherry
+  - Margarida Barroso
+  - Xavier Intes
+  - Jan Hasenauer
+  - Stefan T. Radev
+  publisher: arXiv
+  date: '2025-10-02'
+  link: https://arxiv.org/abs/2505.14429
+  type: paper
+  description: 'Hierarchical Bayesian modeling is the default approach in Bayesian
+    analysis. However, existing Bayesian methods struggle to fit  hierarchical models
+    with many parameters on massive data sets. To address this issue, we develop a
+    divide-and-conquer method based  on score-based diffusion models. Our method scales
+    to hundreds of thousands of parameters and enables fully Bayesian fluoresence  lifetime
+    imaging (FLI) under low signal-to-noise conditions.
+
+    '
+  tags:
+  - simulation-based inference
+  - diffusion models
+  - Bayesian inference
+  - amortized inference
+  - hierarchical Bayesian models
+  plugin: sources.py
+  file: sources.yaml
 - id: arXiv:2502.04949
   title: Does Unsupervised Domain Adaptation Improve the Robustness of Amortized Bayesian
     Inference? A Systematic Evaluation
@@ -16,27 +46,301 @@
   type: paper
   description: 'Neural networks are fragile when confronted with data that significantly
     deviates from their training distribution.  This is true in particular for simulation-based
-    inference methods, such as neural amortized Bayesian inference (ABI),  where models
-    trained on simulated data are deployed on noisy real-world observations. Recent
-    robust approaches employ  unsupervised domain adaptation (UDA) to match the embedding
-    spaces of simulated and observed data. However, the lack of  comprehensive evaluations
-    across different domain mismatches raises concerns about the reliability in high-stakes
-    applications.  We address this gap by systematically testing UDA approaches across
-    a wide range of simulation gaps in silico and practice.  We demonstrate that aligning
-    summary spaces between domains effectively mitigates the impact of unmodeled phenomena
-    or noise.  However, the same alignment mechanism can lead to failures under prior
-    misspecifications - a critical finding with practical  consequences. Our results
-    underscore the need for careful consideration of misspecification types when using
-    UDA to increase  the robustness of ABI.
+    inference, where models trained on simulated data are deployed to  process real-world
+    observations. We test unsupervised domain adaptation (UDA) methods that align
+    embeddings of  simulated and real data to make inference robust to simulation
+    gaps. We find that UDA reduces noise-related errors,  but can cause silent failures
+    when the model''s prior assumptions are wrong---a critical finding with practical
+    consequences.
 
     '
   buttons:
   - type: source
     link: https://github.com/bayesflow-org/NPE-UDA
+  - type: paper
+    text: TMLR (OpenReview)
+    link: https://openreview.net/forum?id=ewgLuvnEw6
+  - type: website
+    text: ICLR (Frontiers in Probabilistic Inference Workshop)
+    link: https://iclr.cc/virtual/2025/workshop/23990
   tags:
   - simulation-based inference
   - Bayesian inference
   - amortized inference
-  - robust inference
+  - trustworthy inference
+  - simulation gaps
+  plugin: sources.py
+  file: sources.yaml
+- id: arXiv:2503.24011
+  title: Simulations in Statistical Workflows
+  authors:
+  - Paul-Christian Bürkner
+  - Marvin Schmitt
+  - Stefan T. Radev
+  publisher: arXiv
+  date: '2025-08-27'
+  link: https://arxiv.org/abs/2503.24011
+  type: paper
+  description: 'Simulations play important and diverse roles in statistical workflows,
+    for example, in model specification, checking, validation,  and even directly
+    in model inference. Over the past decades, the application areas and overall potential
+    of simulations in statistical workflows have expanded significantly, driven by
+    the development of new AI-assisted methods and exponentially increasing computational
+    resources.  In this paper, we examine past and current trends in the field and
+    offer perspectives on how simulations may shape the future of statistical practice.
+
+    '
+  tags:
+  - simulation
+  - simulation-based inference
+  - Bayesian inference
+  - Bayesian workflow
+  - amortized inference
+  plugin: sources.py
+  file: sources.yaml
+- id: 10.31219/osf.io/ge83u
+  title: 'Scaling Cognitive Modeling to Big Data: A Deep Learning Approach to Studying
+    Individual Differences in Evidence Accumulation Model Parameters'
+  authors:
+  - Mischa von Krause
+  - Stefan T. Radev
+  publisher: Center for Open Science
+  date: '2025-01-24'
+  link: https://doi.org/g96f73
+  type: paper
+  description: 'Cognitive models can estimate latent parameters from reaction time
+    and accuracy data, capturing aspects like processing speed  and decision caution.
+    We examined how these parameters relate to real-world outcomes—education, income,
+    and job prestige—in a  large online sample. While overall effects were small,
+    variability in processing speed (drift rate) was the strongest  and most consistent
+    predictor, highlighting the value of behavioral data science for generating new
+    hypotheses about overlooked measures in cognitive modeling.
+
+    '
+  tags:
+  - cognitive modeling
+  - simulation-based inference
+  - Bayesian inference
+  - big data
+  - decision making
+  plugin: sources.py
+  file: sources.yaml
+- id: arXiv:2312.05440
+  title: Consistency Models for Scalable and Fast Simulation-Based Inference
+  authors:
+  - Marvin Schmitt
+  - Valentin Pratz
+  - Ullrich Köthe
+  - Paul-Christian Bürkner
+  - Stefan T Radev
+  publisher: arXiv
+  date: '2024-11-05'
+  link: https://arxiv.org/abs/2312.05440
+  type: paper
+  description: 'We present consistency models for posterior estimation (CMPE), a new
+    free-form generative model family grounded in diffusion model theory. CMPE enables
+    rapid few-shot inference with an unconstrained architecture that can be flexibly
+    tailored to the structure of the estimation problem.  We provide hyperparameters
+    and default architectures that support consistency training over a wide range
+    of different dimensions, including low-dimensional  ones which are important in
+    simulaton-based inference but were previously difficult to tackle even with unconditional
+    consistency models.
+
+    '
+  buttons:
+  - type: source
+    link: https://github.com/bayesflow-org/cmpe
+  - type: website
+    text: NeurIPS (Main Track)
+    link: https://neurips.cc/virtual/2024/poster/95775
+  tags:
+  - simulation-based inference
+  - Bayesian inference
+  - consistency models
+  - diffusion models
+  - generative models
+  plugin: sources.py
+  file: sources.yaml
+- id: arXiv:2310.04395
+  title: Leveraging Self-Consistency for Data-Efficient Amortized Bayesian Inference
+  authors:
+  - Marvin Schmitt
+  - Desi R. Ivanova
+  - Daniel Habermann
+  - Ullrich Köthe
+  - Paul-Christian Bürkner
+  - Stefan T. Radev
+  publisher: arXiv
+  date: '2024-07-24'
+  link: https://arxiv.org/abs/2310.04395
+  type: paper
+  description: 'We improve amortized Bayesian inference by inverting Bayes'' theorem
+    to estimate the implicit model evidence. We leverage the  observation that deviations
+    from constant evidence reveal approximation errors, which we penalize through
+    a novel self-consistency loss.  This loss improves inference quality in low-data
+    regimes and boosts the training of neural density estimators across synthetic
+    and real-world models.
+
+    '
+  buttons:
+  - type: source
+    link: https://github.com/bayesflow-org/self-consistency-abi
+  - type: website
+    text: ICML (Main Track)
+    link: https://icml.cc/virtual/2024/poster/34900
+  - type: website
+    text: NeurIPS (UniReps Workshop)
+    link: https://neurips.cc/virtual/2023/workshop/66494
+  tags:
+  - simulation-based inference
+  - Bayesian inference
+  - data-efficient inference
+  - self-consistency
+  - evidence
+  plugin: sources.py
+  file: sources.yaml
+- id: arXiv:2310.11122
+  title: Sensitivity-Aware Amortized Bayesian Inference
+  authors:
+  - Lasse Elsemüller
+  - Hans Olischläger
+  - Marvin Schmitt
+  - Paul-Christian Bürkner
+  - Ullrich Köthe
+  - Stefan T. Radev
+  publisher: arXiv
+  date: '2024-08-29'
+  link: https://arxiv.org/abs/2310.11122
+  type: paper
+  description: 'Sensitivity analyses help show how different modeling choices affect
+    statistical results, but they''re often too slow for complex  Bayesian models.
+    We introduce sensitivity-aware amortized Bayesian inference (SA-ABI), an efficient
+    way to include sensitivity analysis in neural simulation-based inference.  Our
+    method (1) uses weight sharing to capture similarities between model versions
+    with little extra cost, (2) exploits the speed of neural networks to  test sensitivity
+    to data and preprocessing changes, and (3) applies deep ensembles to spot sensitivity
+    caused by poor model fit. SA-ABI avoids repeatedly  refitting models for each
+    variation and works across different models. Our results show that sensitivity-aware
+    inference can provide automatic insights into hidden uncertainties.
+
+    '
+  buttons:
+  - type: source
+    link: https://github.com/bayesflow-org/SA-ABI
+  - type: paper
+    text: TMLR (OpenReview)
+    link: https://openreview.net/forum?id=Kxtpa9rvM0
+  - type: website
+    text: ICLR (Main Track)
+    link: https://iclr.cc/virtual/2025/poster/31469
+  tags:
+  - simulation-based inference
+  - Bayesian inference
+  - sensitivity analysis
+  - trustworthy inference
+  - deep ensembles
+  plugin: sources.py
+  file: sources.yaml
+- id: arXiv:2406.03154
+  title: 'Detecting Model Misspecification in Amortized Bayesian Inference with Neural
+    Networks: An Extended Investigation'
+  authors:
+  - Marvin Schmitt
+  - Paul-Christian Bürkner
+  - Ullrich Köthe
+  - Stefan T. Radev
+  publisher: arXiv
+  date: '2024-06-07'
+  link: https://arxiv.org/abs/2406.03154
+  type: paper
+  description: 'Generative AI enables efficient simulation-based inference (SBI) for
+    complex models. But how faithful is such inference if the simulation  represents
+    reality somewhat inaccurately? We conceptualize the types of simulation gaps arising
+    in SBI and investigate how neural network  outputs gradually deteriorate as a
+    consequence, making inference results less and less trustworthy. To notify users
+    about this problem,  we propose a new misspecification measure that can be trained
+    without training data from the true distribution. We show that our test warns  users
+    about suspicious outputs, raises an alarm when predictions are not trustworthy,
+    and guides model designers in their search for better simulators.
+
+    '
+  buttons:
+  - type: source
+    link: https://github.com/marvinschmitt/ModelMisspecificationBF
+  - type: website
+    text: GCPR (Main Track)
+    link: https://link.springer.com/chapter/10.1007/978-3-031-54605-1_35
+  tags:
+  - simulation-based inference
+  - Bayesian inference
+  - simulation gaps
+  - trustworthy inference
+  - model misspecification
+  plugin: sources.py
+  file: sources.yaml
+- id: 10.1007/s42113-024-00218-4
+  title: 'Validation and Comparison of Non-stationary Cognitive Models: A Diffusion
+    Model Application'
+  authors:
+  - Lukas Schumacher
+  - Martin Schnuerch
+  - Andreas Voss
+  - Stefan T. Radev
+  publisher: Computational Brain &amp; Behavior
+  date: '2024-10-08'
+  link: https://doi.org/g96f72
+  type: paper
+  description: 'Cognitive processes naturally fluctuate over time, and superstatistics
+    offer a flexible way to capture these non-stationary dynamics  in cognitive models.
+    We provide the first experimental validation of this approach by comparing four
+    time-varying diffusion decision  models in a perceptual task with controlled difficulty
+    and speed-accuracy conditions. Using deep learning for efficient Bayesian estimation,
+    we find that models allowing both gradual and abrupt parameter changes best match
+    the data, suggesting that the inferred dynamics reflect  genuine shifts in cognitive
+    states.
+
+    '
+  buttons:
+  - type: source
+    link: https://github.com/bayesflow-org/Non-Stationary-DDM-Validation
+  tags:
+  - superstatistics
+  - simulation-based inference
+  - Bayesian inference
+  - cognitive modeling
+  - decision making
+  plugin: sources.py
+  file: sources.yaml
+- id: 10.1037/met0000645
+  title: A deep learning method for comparing Bayesian hierarchical models.
+  authors:
+  - Lasse Elsemüller
+  - Martin Schnuerch
+  - Paul-Christian Bürkner
+  - Stefan T. Radev
+  publisher: Psychological Methods
+  date: '2024-05-06'
+  link: https://doi.org/g96f75
+  type: paper
+  description: 'Bayesian model comparison (BMC) offers a principled way to assess
+    the relative merits of competing computational models and propagate uncertainty  into
+    model selection decisions. However, BMC is often intractable for the popular class
+    of hierarchical models due to their large number of parameters.  To address this
+    issue, we propose a deep learning method for performing BMC on any set of hierarchical
+    models that can be instantiated as probabilistic programs.  In addition to unlocking
+    the ability to efficiently compare complex models, our method allows amortized
+    re-estimation of model probabilities and fast performance  validation prior to
+    any real-data application.
+
+    '
+  buttons:
+  - type: source
+    link: https://github.com/bayesflow-org/Hierarchical-Model-Comparison
+  tags:
+  - hierarchical Bayesian models
+  - simulation-based inference
+  - Bayesian inference
+  - cognitive modeling
+  - model comparison
   plugin: sources.py
   file: sources.yaml
