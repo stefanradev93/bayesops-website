@@ -5,8 +5,10 @@ role: pi
 aliases:
   - S.T. Radev
 links:
+  email: radevs@rpi.edu
   home-page: https://faculty.rpi.edu/stefan-radev
   google-scholar: JbDfkRkAAAAJ&hl=en
+  github: stefanradev93
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

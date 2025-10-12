@@ -1,11 +1,9 @@
 ---
-name: Niels Bracher
+name: Ben Rodriguez
 image: images/photo.jpg
-role: phd
-group: graduate-students
-links:
-  email: brachn@rpi.edu
-  github: niels-leif-bracher
+description: Undergraduate Student
+role: undergrad
+# links:
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

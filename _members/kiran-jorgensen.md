@@ -1,11 +1,9 @@
 ---
-name: Niels Bracher
+name: Kiran Jorgensen
 image: images/photo.jpg
-role: phd
-group: graduate-students
+description: Undergraduate Student
+role: undergrad
 links:
-  email: brachn@rpi.edu
-  github: niels-leif-bracher
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
