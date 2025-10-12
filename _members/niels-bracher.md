@@ -1,8 +1,8 @@
 ---
-name: John Doe
+name: Niels Bracher
 image: images/photo.jpg
 role: phd
-group: alum
+group: graduate-students
 links:
   github: john-doe
 ---

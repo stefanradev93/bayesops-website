@@ -7,8 +7,11 @@ nav:
 
 # {% include icon.html icon="fa-solid fa-microscope" %}Research
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Our research follows two streams: 
+- The first focuses on developing new Bayesian methods through the emerging generation of generative neural networks. 
+- The second focuses on building and applying computational models of complex processes to gain insights from data.
+
+These two streams converge at our BayesFlow framework for Bayesian inference with modern deep learning.
 
 {% include section.html %}
 

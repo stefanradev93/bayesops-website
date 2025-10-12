@@ -1,10 +1,10 @@
 ---
-name: Sarah Johnson
+name: Jerry Huang
 image: images/photo.jpg
-description: Lead Programmer
-role: programmer
+description: Postdoctoral Researcher
+role: postdoc
 links:
-  email: sarah.johnson@gmail.com
+  email: huangm13@rpi.edu
   twitter: sarahjohnson
 ---
 

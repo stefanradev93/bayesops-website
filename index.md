@@ -1,9 +1,9 @@
 ---
 ---
 
-# stefanradev93's Website
+# Welcome to BayesOps
 
-An engaging 1-3 sentence description of your lab.
+This website is under construction!
 
 {% include section.html %}
 

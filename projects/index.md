@@ -7,10 +7,9 @@ nav:
 
 # {% include icon.html icon="fa-solid fa-wrench" %}Projects
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+At BayesOps, we develop advanced methods and software for AI-assisted probabilistic modeling. Check out some of our projects below!
 
-{% include tags.html tags="publication, resource, website" %}
+{% include tags.html tags="publication, software, award" %}
 
 {% include search-info.html %}
 

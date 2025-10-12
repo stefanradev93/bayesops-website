@@ -1,47 +1,23 @@
-- title: Cool Dataset
-  subtitle: a subtitle
+- title: BayesFlow
+  subtitle: Generative AI for Computational Statistics
   group: featured
-  image: images/photo.jpg
-  link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  repo: greenelab/lab-website-template
-  tags:
-    - resource
-
-- title: Cool Package
-  subtitle: a subtitle
-  group: featured
-  image: images/photo.jpg
-  link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  repo: greenelab/lab-website-template
-  tags:
-    - resource
-
-- title: Cool Tutorial
-  subtitle: a subtitle
-  image: images/photo.jpg
-  link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  repo: greenelab/lab-website-template
-  tags:
-    - resource
-    - publication
-
-- title: Cool Web App
-  subtitle: a subtitle
-  image: images/photo.jpg
-  link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  repo: greenelab/lab-website-template
+  image: images/bayesflow.png
+  link: https://bayesflow.org/
+  description: > 
+    BayesFlow is a Python library for simulation-based inference with generative AI. 
+    It provides users and researchers with a user-friendly API for rapid Bayesian workflows,
+    a rich collection of neural architectures, and multi-backend support via Keras3.
+  repo: bayesflow-org/bayesflow
   tags:
     - software
 
-- title: Cool Web Server
-  subtitle: a subtitle
+- title: BayesGPT
+  subtitle: Amortizing Cognitive Modeling
   image: images/photo.jpg
-  link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  repo: greenelab/lab-website-template
+  link: #
+  description: >
+    In this NSF-funded project, we will develop a scalable framework for efficient Bayesian inference, enabling researchers to build, 
+    fit, and adapt thousands of cognitive models within a single network. The project's strong focus on robust inference and benchmarking
+    aims to strenghten the broader scientific infrastructure for model-based research in the behavioral and cognitive sciences.
   tags:
-    - software
+    - award

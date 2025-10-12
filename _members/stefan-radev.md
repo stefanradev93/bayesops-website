@@ -1,13 +1,12 @@
 ---
-name: Jane Smith
+name: Stefan T. Radev
 image: images/photo.jpg
-role: principal-investigator
-affiliation: University of Colorado
+role: pi
+affiliation: Rensselaer Polytechnic Institute
 aliases:
-  - J. Smith
-  - J Smith
+  - S.T. Radev
 links:
-  home-page: https://janesmith.com
+  home-page: https://faculty.rpi.edu/stefan-radev
   orcid: 0000-0001-8713-9213
 ---
 

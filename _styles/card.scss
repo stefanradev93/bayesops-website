@@ -6,7 +6,7 @@
   justify-content: stretch;
   align-items: center;
   flex-direction: column;
-  width: 350px;
+  width: 500px;
   max-width: calc(100% - 20px - 20px);
   margin: 20px;
   background: var(--background);
@@ -17,14 +17,15 @@
 }
 
 .card[data-style="small"] {
-  width: 250px;
+  width: 350px;
 }
+
 
 .card-image img {
   aspect-ratio: 3 / 2;
-  object-fit: cover;
-  width: 100%;
-  // box-shadow: var(--shadow);
+  object-fit: contain;     /* show full image without cropping */
+  width: 95%;
+  height: 95%;
 }
 
 .card-text {
