@@ -15,9 +15,15 @@ from diskcache import Cache
 # cache for time-consuming network requests
 cache = Cache("./_cite/.cache")
 
-
 # clear expired items from cache
 cache.expire()
+
+
+def fix_mojibake(text):
+    try:
+        return text.encode("latin1").decode("utf-8")
+    except Exception:
+        return text  # if it fails, just return the original
 
 
 def log_cache(func):
@@ -193,14 +199,16 @@ def cite_with_manubot(_id):
     # run manubot
     try:
         commands = ["manubot", "cite", _id, "--log-level=WARNING"]
-        output = subprocess.Popen(commands, stdout=subprocess.PIPE).communicate()
+        output_bytes = subprocess.Popen(commands, stdout=subprocess.PIPE).communicate()[0]
+        output_text = output_bytes.decode("utf-8")
+        
     except Exception as e:
         log(e, indent=3)
         raise Exception("Manubot could not generate citation")
 
     # parse results as json
     try:
-        manubot = json.loads(output[0])[0]
+        manubot = json.loads(output_text)[0]
     except Exception:
         raise Exception("Couldn't parse Manubot response")
 
@@ -215,9 +223,14 @@ def cite_with_manubot(_id):
 
     # authors
     citation["authors"] = []
-    for author in get_safe(manubot, "author", {}):
+    for author in get_safe(manubot, "author", []):
         given = get_safe(author, "given", "").strip()
         family = get_safe(author, "family", "").strip()
+
+        # fix encoding issues
+        given = fix_mojibake(given)
+        family = fix_mojibake(family)
+
         if given or family:
             citation["authors"].append(" ".join([given, family]))
 

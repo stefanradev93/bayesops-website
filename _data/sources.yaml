@@ -16,6 +16,6 @@
       link: https://github.com/bayesflow-org/NPE-UDA
   tags:
     - simulation-based inference
-    - robustness
-    - unsupervised domain adaptation
     - Bayesian inference
+    - amortized inference
+    - robust inference

@@ -4,11 +4,11 @@
   title: Does Unsupervised Domain Adaptation Improve the Robustness of Amortized Bayesian
     Inference? A Systematic Evaluation
   authors:
-  - Lasse ElsemÃ¼ller
+  - Lasse Elsemüller
   - Valentin Pratz
   - Mischa von Krause
   - Andreas Voss
-  - Paul-Christian BÃ¼rkner
+  - Paul-Christian Bürkner
   - Stefan T. Radev
   publisher: arXiv
   date: '2025-05-21'
@@ -35,8 +35,8 @@
     link: https://github.com/bayesflow-org/NPE-UDA
   tags:
   - simulation-based inference
-  - robustness
-  - unsupervised domain adaptation
   - Bayesian inference
+  - amortized inference
+  - robust inference
   plugin: sources.py
   file: sources.yaml
