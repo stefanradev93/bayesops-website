@@ -5,7 +5,7 @@ description: Postdoctoral Researcher
 role: postdoc
 links:
   email: huangm13@rpi.edu
-  home-page: https://intes-lab.bme.rpi.edu/node/105
+  home-page: https://www.researchgate.net/profile/Jerry-Huang-27
   google-scholar: XpYC7lEAAAAJ&hl=en
   github: jerrymhuang
 ---

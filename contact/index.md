@@ -7,61 +7,34 @@ nav:
 
 # {% include icon.html icon="fa-regular fa-envelope" %}Contact
 
-If you are a student who wants to do research at the frontier of probabilistic modeling, drop me a mail or simply pass by the lab.
+If you are a student interested in joining the lab and contributing to our research, we are always excited to hear from motivated individuals who want to work on:
+
+- Cutting-edge Bayesian modeling and probabilistic inference  
+- Novel neural network architectures and generative AI  
+- Open and reproducible research software for computational science
+- Cognitive modeling and behavioral data science
+
+Feel free to drop us a message — we’re happy to discuss research opportunities, independent study projects, or collaborations.
 
 {%
   include button.html
   type="email"
-  text="Email"
+  text="Get in Touch"
   link="radev@rpi.edu"
-%}
-{%
-  include button.html
-  type="address"
-  tooltip="Our location on Google Maps for easy navigation"
-  link="https://www.google.com/maps"
 %}
 
 {% include section.html %}
 
-{% capture col1 %}
+Our lab is located within the **Department of Cognitive Science** and the **Center for Industrial Innovation** on the Rensselaer Polytechnic Institute (RPI) campus in Troy, NY.
 
-{%
-  include figure.html
-  image="images/photo.jpg"
-  caption="Lorem ipsum"
-%}
-
-{% endcapture %}
-
-{% capture col2 %}
-
-{%
-  include figure.html
-  image="images/photo.jpg"
-  caption="Lorem ipsum"
-%}
-
-{% endcapture %}
-
-{% include cols.html col1=col1 col2=col2 %}
-
-{% include section.html dark=true %}
-
-{% capture col1 %}
-Low Center for Industrial Innovation<br>
-110 8th Street<br>
-Troy, NY 12180
-{% endcapture %}
-
-{% capture col2 %}
-{% endcapture %}
-
-{% capture col3 %}
-Cognitive Science Department<br>
-110 8th Street<br>
-Troy, NY 12180
-{% endcapture %}
-
-
-{% include cols.html col1=col1 col2=col2 col3=col3 %}
+<div style="margin: 2rem 0;">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2930.769804023383!2d-73.68146868806319!3d42.72976277104071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89de0f9eebfa097d%3A0xa5592b13db1f5302!2sRensselaer%20Polytechnic%20Institute!5e0!3m2!1sen!2sus!4v1760324569919!5m2!1sen!2sus"
+    width="100%"
+    height="350"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>

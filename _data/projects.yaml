@@ -13,6 +13,7 @@
 
 - title: BayesGPT
   subtitle: Amortizing Cognitive Modeling
+  group: featured
   image: images/photo.jpg
   link: #
   description: >

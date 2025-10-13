@@ -14,12 +14,16 @@ phd:
   icon: fa-solid fa-graduation-cap
   description: PhD Student
 
-undergrad:
+msc:
   icon: fa-solid fa-user-graduate
+  description: MSc Student
+
+undergrad:
+  icon: fa-solid fa-solid fa-book
   description: Undergraduate Student
 
 affiliate:
-  icon: fa-solid fa-affiliate
+  icon: fa-solid fa-handshake
   description: Affiliate Member
 
 # general

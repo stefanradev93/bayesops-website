@@ -9,12 +9,13 @@ links:
   home-page: https://faculty.rpi.edu/stefan-radev
   google-scholar: JbDfkRkAAAAJ&hl=en
   github: stefanradev93
+  bluesky: stefanradev
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Faucibus purus in massa tempor nec feugiat nisl pretium fusce.
-Elit at imperdiet dui accumsan.
-Duis tristique sollicitudin nibh sit amet commodo nulla facilisi.
-Vitae elementum curabitur vitae nunc sed velit dignissim sodales.
-Lacinia at quis risus sed vulputate odio ut.
-Magna eget est lorem ipsum.
+Stefan T. Radev is the principal investigator of the lab. He leads research on amortized Bayesian inference with generative AI and is a core developer and originator of the [BayesFlow](https://bayesflow.org/) framework. He is particularly interested in the intersection of Bayesian modeling, deep learning, and cognitive science.  
+
+**Education**
+
+- **2018 – 2021** – Ph.D., Heidelberg University (Statistical Modeling in Psychology)  
+- **2021 – 2023** – Postdoctoral Researcher, Heidelberg University (Deep Learning)  
+- **2023 – present** – Assistant Professor, Rensselaer Polytechnic Institute

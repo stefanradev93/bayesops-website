@@ -1,10 +1,8 @@
 ---
 title: Hello World!
 author: stefan-radev
-tags:
-  - biology
-  - medicine
-  - big data
 ---
 
-Our website is live!
+Long overdue — our lab website is finally up and running! 🎉
+
+We’ll use this space to share research updates, publications, and other BayesOps happenings. Stay tuned!
