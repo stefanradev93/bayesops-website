@@ -3,7 +3,7 @@
   ![on-pull-request](../../actions/workflows/on-pull-request.yaml/badge.svg)
   ![on-schedule](../../actions/workflows/on-schedule.yaml/badge.svg)
 
-  # BayesOps Lab Wwebpage
+  # BayesOps Lab Webpage
 
   Visit **[bayesops.com](http://bayesops.com)** 🚀
 
