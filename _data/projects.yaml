@@ -1,7 +1,7 @@
 - title: BayesFlow
   subtitle: Generative AI for Computational Statistics
   group: featured
-  image: images/bayesflow.png
+  image: images/projects/bayesflow.png
   link: https://bayesflow.org/
   description: > 
     BayesFlow is a Python library for simulation-based inference with generative AI. 
@@ -14,7 +14,7 @@
 - title: BayesGPT
   subtitle: Amortizing Cognitive Modeling
   group: featured
-  image: images/bayesgpt.png
+  image: images/projects/bayesgpt.png
   link: #
   description: >
     In this NSF-funded project, we will develop a scalable framework for efficient Bayesian inference, enabling researchers to build, 
