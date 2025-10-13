@@ -7,12 +7,12 @@ nav:
 
 # {% include icon.html icon="fa-regular fa-envelope" %}Contact
 
-If you are a student interested in joining the lab and contributing to our research, we are always excited to hear from motivated individuals who want to work on:
+We are always excited to hear from students and researchers who want to work on:
 
-- Cutting-edge Bayesian modeling and probabilistic inference  
-- Novel neural network architectures and generative AI  
-- Open and reproducible research software for computational science
-- Cognitive modeling and behavioral data science
+- Cutting-edge Bayesian modeling and statistical inference  
+- Application and development of generative AI for science
+- Open-source research software for statistical inference
+- Cognitive modeling, behavioral data science, and big data
 
 Feel free to drop us a message — we’re happy to discuss research opportunities, independent study projects, or collaborations.
 

@@ -1,6 +1,5 @@
 - title: BayesFlow
   subtitle: Generative AI for Computational Statistics
-  group: featured
   image: images/projects/bayesflow.png
   link: https://bayesflow.org/
   description: > 
@@ -13,12 +12,11 @@
 
 - title: BayesGPT
   subtitle: Amortizing Cognitive Modeling
-  group: featured
   image: images/projects/bayesgpt.png
-  link: #
+  link: https://www.nsf.gov/awardsearch/showAward?AWD_ID=2448380&HistoricalAwards=false
   description: >
-    In this NSF-funded project, we will develop a scalable framework for efficient Bayesian inference, enabling researchers to build, 
-    fit, and adapt thousands of cognitive models within a single network. The project's strong focus on robust inference and benchmarking
-    aims to strenghten the broader scientific infrastructure for model-based research in the behavioral and cognitive sciences.
+    We are developing neural networks that will allow researchers to fit thousands of cognitive 
+    models. The project's focus on robust inference and benchmarking
+    aims to strenghten the emerging infrastructure for model-based analysis in the behavioral sciences.
   tags:
     - award
