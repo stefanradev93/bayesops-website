@@ -3,7 +3,7 @@
 
 ## Our Mission
 
-At BayesOps, we blend AI, Bayesian statistics, and simulations at the frontier of computational science. 
+At BayesOps, we blend AI, Bayesian statistics, and simulations at the frontier of computational modeling. 
 
 {% include section.html %}
 
@@ -26,7 +26,7 @@ We develop, validate, and apply Bayesian methods for AI-assisted statistical wor
 
 {%
   include feature.html
-  image="images/photo.jpg"
+  image="images/projects/bayesgpt.png"
   link="research"
   title="Our Research"
   text=text
