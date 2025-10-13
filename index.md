@@ -1,9 +1,9 @@
 ---
 ---
 
-# Welcome to BayesOps
+## Our Mission
 
-This website is under construction!
+At BayesOps, we blend AI, Bayesian statistics, and simulations to learn from uncharted computational models. 
 
 {% include section.html %}
 
@@ -11,7 +11,7 @@ This website is under construction!
 
 {% capture text %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+We develop, validate, and apply Bayesian methods for AI-assisted statistical workflows.
 
 {%
   include button.html
@@ -34,7 +34,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {% capture text %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+We create novel software and neural architectures for efficient Bayesian modeling.
 
 {%
   include button.html
@@ -59,7 +59,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {% capture text %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+We bring together scholars from RPI and all around the world to advance collaborative research.
 
 {%
   include button.html
