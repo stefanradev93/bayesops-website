@@ -7,7 +7,7 @@ nav:
 
 # {% include icon.html icon="fa-solid fa-wrench" %}Projects
 
-At BayesOps, we develop robust software and novel neural architectures for end-to-end Bayesian modeling. The lab is supported by the National Science Foundation (NSF).
+At BayesOps, we develop robust software and novel neural architectures for end-to-end Bayesian modeling. The lab is generously supported by the National Science Foundation (NSF).
 
 {% include section.html %}
 

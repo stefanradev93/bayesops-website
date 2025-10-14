@@ -7,7 +7,7 @@ nav:
 
 # {% include icon.html icon="fa-solid fa-users" %}Team
 
-BayesOps brings together researchers from Rensselaer Polytechnic Institute and affiliated members from partner institutions to advance collaborative research in probabilistic and cognitive modeling. 
+BayesOps brings together researchers from Rensselaer Polytechnic Institute and affiliated members from partner labs around the world to advance collaborative research at the intersection of AI and probabilistic modeling. 
 
 {% include section.html %}
 

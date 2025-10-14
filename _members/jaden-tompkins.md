@@ -6,4 +6,4 @@ role: msc
 # links:
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Jaden Tompkins as an MSc student at Rensselaer Polytechnic Institute. He is currently working in a collaborative project on simulation-based inference for exoplanet detection.

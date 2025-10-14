@@ -6,4 +6,4 @@ role: undergrad
 links:
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Kiran Jorgensen is an undegraduare student at Rensselaer Polytechnic Institute. He is currently working on efficient Bayesian inference for computational finance.
