@@ -9,9 +9,9 @@ nav:
 
 ## Research Agenda
 
-At BayesOps, our research follows two general streams:
-- Developing new Bayesian methods through the emerging generation of generative AI models. 
-- Crafting and applying computational models of complex systems to gain insights from (big) data.
+Our research follows two general streams:
+- Developing new Bayesian methods through the emerging generation of generative AI. 
+- Crafting computational models of complex systems to gain insights from (big) data.
 
 These two streams converge at the [BayesFlow framework](https://bayesflow.org) for Bayesian inference with modern deep learning.
 The list below provides a small, but representative sample of our recent research outcomes.

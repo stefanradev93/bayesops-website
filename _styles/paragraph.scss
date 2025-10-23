@@ -6,3 +6,10 @@ p {
   text-align: justify;
   line-height: var(--spacing);
 }
+
+// On mobile, override justification to prevent stretched text
+@media (max-width: 768px) {
+  p {
+    text-align: center;
+  }
+}
