@@ -28,3 +28,9 @@ li {
     text-align: left;
   }
 }
+
+@media (max-width: 768px) {
+  li p {
+    text-align: left !important;
+  }
+}
