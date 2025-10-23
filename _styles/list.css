@@ -19,4 +19,10 @@ li ol {
   margin: 0;
 }
 
+@media (max-width: 768px) {
+  li {
+    text-align: left;
+  }
+}
+
 /*# sourceMappingURL=list.css.map */
