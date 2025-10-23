@@ -24,5 +24,10 @@ li ol {
     text-align: left;
   }
 }
+@media (max-width: 768px) {
+  li p {
+    text-align: left !important;
+  }
+}
 
 /*# sourceMappingURL=list.css.map */
