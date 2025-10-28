@@ -1,6 +1,6 @@
 ---
 name: Jaden Tompkins
-image: images/photo.jpg
+image: images/members/jaden-tompkins.jpg
 description: MSc Student
 role: msc
 # links:

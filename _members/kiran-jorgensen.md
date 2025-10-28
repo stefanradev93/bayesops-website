@@ -1,6 +1,6 @@
 ---
 name: Kiran Jorgensen
-image: images/photo.jpg
+image: images/members/kiran-jorgensen.jpg
 description: Undergraduate Student
 role: undergrad
 links:
