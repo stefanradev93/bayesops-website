@@ -3,8 +3,8 @@
   image: images/projects/togetherflow.png
   link: https://github.com/jerrymhuang/TogetherFlow
   description: >
-    We are developing neural networks that will allow researchers to fit thousands of cognitive 
-    models. The project's focus on robust inference and benchmarking
-    aims to strenghten the emerging infrastructure for model-based analysis in the behavioral sciences.
+    In a first-of-its-kind application, we use simulation-based inference for modeling
+    human motion while experiencing shared virtual environments, paving the way 
+    for more simulation-based research on human interaction with the built environment. 
   tags:
     - application
