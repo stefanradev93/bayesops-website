@@ -15,6 +15,7 @@ At BayesOps, we develop robust software and novel neural architectures for end-t
 
 {% include list.html component="card" data="highlighted-projects"%}
 
+{% include section.html %}
 
 ## Applications
 
