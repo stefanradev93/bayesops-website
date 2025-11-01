@@ -13,4 +13,9 @@ At BayesOps, we develop robust software and novel neural architectures for end-t
 
 ## Highlighted Projects
 
-{% include list.html component="card" data="projects"%}
+{% include list.html component="card" data="highlighted-projects"%}
+
+
+## Applications
+
+{% include list.html component="card" data="applications"%}

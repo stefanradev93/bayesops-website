@@ -1,0 +1,10 @@
+- title: TogetherFlow
+  subtitle: Human Motion in Immersive Rooms
+  image: images/projects/togetherflow.png
+  link: https://github.com/jerrymhuang/TogetherFlow
+  description: >
+    We are developing neural networks that will allow researchers to fit thousands of cognitive 
+    models. The project's focus on robust inference and benchmarking
+    aims to strenghten the emerging infrastructure for model-based analysis in the behavioral sciences.
+  tags:
+    - application
