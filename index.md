@@ -74,7 +74,7 @@ We bring together scholars from RPI and all around the world to advance collabor
 
 {%
   include feature.html
-  image="images/photo.jpg"
+  image="images/index/team.png"
   link="team"
   title="Our Team"
   text=text
