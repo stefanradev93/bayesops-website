@@ -1,6 +1,6 @@
 ---
 name: Ben Rodriguez
-image: images/photo.jpg
+image: images/members/ben-rodriguez.jpg
 description: Undergraduate Student
 role: undergrad
 # links:
