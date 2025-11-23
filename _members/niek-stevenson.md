@@ -6,7 +6,7 @@ institution: University of Amsterdam
 role: affiliate
 links:
   email: n.r.stevenson@uva.nl
-  home-page: https://www.uva.nl/en/profile/s/t/n.r.stevenson/n.r.stevenson
+  home-page: https://www.uva.nl/en/profile/s/t/n.r.stevenson/n.r.stevenson.html
   google-scholar: 3UDVjhQAAAAJ&hl=en
   github: niekstevenson
 ---
