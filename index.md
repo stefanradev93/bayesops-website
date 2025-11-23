@@ -84,6 +84,8 @@ We bring together scholars from RPI and all around the world to advance collabor
 
 ## Latest News
 
+- **November 2025** – [Niek Stevenson]({{ '/members/niek-stevenson' | relative_url }}) from University of Amsterdam and [Mischa von Krause]({{ '/members/mischa-von-krause' | relative_url }}) from Heidelberg University visited the lab as part of ongoing collaborations.
+
 - **October 2025** – [Stefan T. Radev]({{ '/members/stefan-radev' | relative_url }}) gave a talk and [Niels Bracher]({{ '/members/niels-bracher' | relative_url }}) presented a poster at the [STAMPS Workshop](https://www.cmu.edu/dietrich/statistics-datascience/stamps/workshop/index.html) on neural simulation-based inference, held at Carnegie Mellon University.
 
 - **September 2025** – [Stefan T. Radev]({{ '/members/stefan-radev' | relative_url }}) presented a poster at the [European Mathematical Psychology Group Meeting 2025](https://psychometrics-laboratory.psy.unipd.it/EMPG2025/), held at the University of Padova.
