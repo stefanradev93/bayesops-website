@@ -196,3 +196,17 @@
     - Bayesian inference
     - cognitive modeling
     - model comparison
+
+- id: arXiv:2511.08763
+  type: paper
+  description: >
+    Computational models can help us understand the underlying mechanism of human interactions in spatially augmented reality systems. 
+    In a first application of simulation-based inference (SBI) in human-building interaction, we develop a new agent-based model of emergent human motion in immersive rooms, with agents simultaneously influenced by their surrounding virtual world and their local neighbors. 
+    Using SBI, we show that the governing parameters of motion patterns can be estimated from simple observables. Our approach paves the way for creating adaptive interfaces for intelligent built environments.
+  image: images/research/immersive-room.png
+  tags:
+    - simulation-based inference
+    - cognitive modeling
+    - Bayesian inference
+    - agent-based models
+    - application
