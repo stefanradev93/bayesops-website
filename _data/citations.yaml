@@ -351,11 +351,10 @@
 - id: arXiv:2511.08763
   title: Modeling multi-agent motion dynamics in immersive rooms
   authors:
-  - ' Mincong'
-  - ' Huang'
+  - Jerry M. Huang
   - Stefan T. Radev
   publisher: arXiv
-  date: '2025-11-13'
+  date: '2025-12-22'
   link: https://arxiv.org/abs/2511.08763
   type: paper
   description: 'Computational models can help us understand the underlying mechanism
