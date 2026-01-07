@@ -1,5 +1,39 @@
 # DO NOT EDIT, GENERATED AUTOMATICALLY
 
+- id: arXiv:2512.20685
+  title: 'Diffusion Models in Simulation-Based Inference: A Tutorial Review'
+  authors:
+  - Jonas Arruda
+  - Niels Bracher
+  - Ullrich Köthe
+  - Jan Hasenauer
+  - Stefan T. Radev
+  publisher: arXiv
+  date: '2025-12-25'
+  link: https://arxiv.org/abs/2512.20685
+  type: paper
+  description: 'In this tutorial review, we synthesize recent developments on diffusion
+    models in SBI, covering design choices for training,  inference, and evaluation.
+    We highlight opportunities created by various concepts such as guidance, score
+    composition,  flow matching, consistency models, and joint modeling. We also discuss
+    how efficiency and statistical accuracy are affected  by noise schedules, parameterizations,
+    and samplers. Concepts are illustrated with case studies across various problems.
+
+    '
+  image: images/research/diffusion_models.jpg
+  buttons:
+  - type: source
+    link: https://github.com/bayesflow-org/diffusion-experiments
+  - type: website
+    link: https://bayesflow-org.github.io/diffusion-experiments/
+  tags:
+  - diffusion models
+  - simulation-based inference
+  - flow matching
+  - consistency models
+  - amortized inference
+  plugin: sources.py
+  file: sources.yaml
 - id: arXiv:2505.14429
   title: Compositional amortized inference for large-scale hierarchical Bayesian models
   authors:
