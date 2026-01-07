@@ -1,3 +1,23 @@
+- id: arXiv:2512.20685
+  type: paper
+  description: >
+    In this tutorial review, we synthesize recent developments on diffusion models in SBI, covering design choices for training, 
+    inference, and evaluation. We highlight opportunities created by various concepts such as guidance, score composition, 
+    flow matching, consistency models, and joint modeling. We also discuss how efficiency and statistical accuracy are affected 
+    by noise schedules, parameterizations, and samplers. Concepts are illustrated with case studies across various problems.
+  buttons:
+    - type: source
+      link: https://github.com/bayesflow-org/diffusion-experiments
+    - type: website
+      link: https://bayesflow-org.github.io/diffusion-experiments/
+  tags:
+    - simulation-based inference
+    - diffusion models
+    - Bayesian inference
+    - amortized inference
+    - hierarchical Bayesian models
+
+
 - id: arXiv:2505.14429
   type: paper
   description: >
