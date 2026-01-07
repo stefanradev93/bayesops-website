@@ -11,12 +11,11 @@
     - type: website
       link: https://bayesflow-org.github.io/diffusion-experiments/
   tags:
-    - simulation-based inference
     - diffusion models
-    - Bayesian inference
+    - simulation-based inference
+    - flow matching
+    - consistency models
     - amortized inference
-    - hierarchical Bayesian models
-
 
 - id: arXiv:2505.14429
   type: paper
