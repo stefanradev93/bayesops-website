@@ -20,17 +20,18 @@
     and samplers. Concepts are illustrated with case studies across various problems.
 
     '
+  image: images/research/diffusion_models.jpg
   buttons:
   - type: source
     link: https://github.com/bayesflow-org/diffusion-experiments
   - type: website
     link: https://bayesflow-org.github.io/diffusion-experiments/
   tags:
-  - simulation-based inference
   - diffusion models
-  - Bayesian inference
+  - simulation-based inference
+  - flow matching
+  - consistency models
   - amortized inference
-  - hierarchical Bayesian models
   plugin: sources.py
   file: sources.yaml
 - id: arXiv:2505.14429
