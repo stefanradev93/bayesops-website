@@ -24,7 +24,7 @@
   image: images/research/jadai.png
   tags:
   - amortized inference
-  - Bayesian adaptive design
+  - adaptive design
   - diffusion models
   - flow matching
   - simulation-based inference
