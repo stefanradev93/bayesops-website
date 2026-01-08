@@ -16,7 +16,7 @@
   #    link: https://arxiv.org/abs/2512.22999
   tags:
     - amortized inference
-    - Bayesian adaptive design
+    - adaptive design
     - diffusion models
     - flow matching
     - simulation-based inference
