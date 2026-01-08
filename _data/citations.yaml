@@ -1,5 +1,38 @@
 # DO NOT EDIT, GENERATED AUTOMATICALLY
 
+- id: arXiv:2512.22999
+  title: 'JADAI: Jointly Amortizing Adaptive Design and Bayesian Inference'
+  authors:
+  - Niels Bracher
+  - Lars Kühmichel
+  - Desi R. Ivanova
+  - Xavier Intes
+  - Paul-Christian Bürkner
+  - Stefan T. Radev
+  publisher: arXiv
+  date: '2025-12-30'
+  link: https://arxiv.org/abs/2512.22999
+  type: paper
+  description: 'We introduce JADAI, a unified amortized framework for sequential experiment
+    design and Bayesian inference that  learns end-to-end how to choose experimental
+    settings that shape the observation process and how to update the posterior  uncertainty
+    over the parameters as data accumulates. JADAI trains a policy, a history encoder,
+    and a posterior estimator jointly using a step-wise objective that rewards incremental  reductions
+    in posterior error along an experimental rollout. For inference, it uses diffusion-based
+    posterior estimators  (and also demonstrates a flow-matching variant) to represent
+    high-dimensional and multimodal posteriors at every step.  We evaluate JADAI on
+    adaptive-design benchmarks where it achieves superior or competitive performance.
+
+    '
+  image: images/research/jadai.png
+  tags:
+  - amortized inference
+  - Bayesian adaptive design
+  - diffusion models
+  - flow matching
+  - simulation-based inference
+  plugin: sources.py
+  file: sources.yaml
 - id: arXiv:2512.20685
   title: 'Diffusion Models in Simulation-Based Inference: A Tutorial Review'
   authors:
