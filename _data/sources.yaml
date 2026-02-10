@@ -1,21 +1,3 @@
-- id: arXiv:2602.07098
-  type: paper
-  description: >
-    We present the new BayesFlow 2.0 framework for general-purpose amortized Bayesian inference. Along with direct posterior, 
-    likelihood, and ratio estimation, the software includes support for multiple popular deep learning backends, a rich collection 
-    of generative networks for sampling and density estimation, complete customization and high-level interfaces, as well as new 
-    capabilities for hyperparameter optimization, design optimization, and hierarchical modeling.
-  image: images/research/bayesflow_v2_paper.png
-  buttons:
-   - type: website
-     link: https://bayesflow.org
-  tags:
-    - amortized inference
-    - simulation-based inference
-    - software
-    - Bayesian workflow
-    - diffusion models
-
 - id: arXiv:2512.22999
   type: paper
   description: >
