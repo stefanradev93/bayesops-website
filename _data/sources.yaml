@@ -25,7 +25,6 @@
     JADAI trains a policy, a history encoder, and a posterior estimator jointly and achieves superior or competitive 
     performance on adaptive design benchmarks.
   image: images/research/jadai.png
-
   tags:
     - amortized inference
     - adaptive design
