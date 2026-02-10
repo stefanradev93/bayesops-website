@@ -1,3 +1,21 @@
+- id: arXiv:2602.07098
+  type: paper
+  description: >
+    We present the new BayesFlow 2.0 framework for general-purpose amortized Bayesian inference. Along with direct posterior, 
+    likelihood, and ratio estimation, the software includes support for multiple popular deep learning backends, a rich collection 
+    of generative networks for sampling and density estimation, complete customization and high-level interfaces, as well as new 
+    capabilities for hyperparameter optimization, design optimization, and hierarchical modeling.
+  image: images/research/bayesflow_v2_paper.png
+  buttons:
+   - type: website
+     link: https://bayesflow.org
+  tags:
+    - amortized inference
+    - simulation-based inference
+    - software
+    - Bayesian workflow
+    - diffusion models
+
 - id: arXiv:2512.22999
   type: paper
   description: >
@@ -5,15 +23,9 @@
     learns end-to-end how to choose experimental settings that shape the observation process and how to update the posterior 
     uncertainty over the parameters as data accumulates.
     JADAI trains a policy, a history encoder, and a posterior estimator jointly and achieves superior or competitive 
-    performance on adaptive-design benchmarks.
-  #  JADAI trains a policy, a history encoder, and a posterior estimator jointly using a step-wise objective that rewards incremental
-  #  reductions in posterior error along an experimental rollout. For inference, it uses diffusion-based posterior estimators
-  #  (and also demonstrates a flow-matching variant) to represent high-dimensional and multimodal posteriors at every step.
-  #  We evaluate JADAI on adaptive-design benchmarks where it achieves superior or competitive performance.
+    performance on adaptive design benchmarks.
   image: images/research/jadai.png
-  #buttons:
-  #  - type: paper
-  #    link: https://arxiv.org/abs/2512.22999
+
   tags:
     - amortized inference
     - adaptive design
@@ -49,9 +61,6 @@
     on score-based diffusion models. Our method scales to hundreds of thousands of parameters and enables fully Bayesian fluoresence 
     lifetime imaging (FLI) under low signal-to-noise conditions.
   image: images/research/compositional-modeling.jpg
-  # buttons:
-  #   - type: source
-  #     link: https://github.com/bayesflow-org/NPE-UDA
   tags:
     - simulation-based inference
     - diffusion models

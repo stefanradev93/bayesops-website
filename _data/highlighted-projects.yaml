@@ -23,7 +23,7 @@
 
 - title: Diffusion Models for Bayesian Analysis
   subtitle: Scaling Amortized Inference and Adaptive Design
-  image: images/projects/bayesgpt.png
+  image: images/research/diffusion_models.png
   link: https://bayesflow-org.github.io/diffusion-experiments
   description: >
     Diffusion models have recently emerged as powerful backbones for simulation-based inference. 
