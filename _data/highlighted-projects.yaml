@@ -20,14 +20,3 @@
     aims to strenghten the emerging infrastructure for model-based analysis in the behavioral sciences.
   tags:
     - award
-
-- title: Diffusion Models for Bayesian Analysis
-  subtitle: Scaling Amortized Inference and Adaptive Design
-  image: images/research/diffusion_models.jpg
-  link: https://bayesflow-org.github.io/diffusion-experiments
-  description: >
-    Diffusion models have recently emerged as powerful backbones for simulation-based inference. 
-    The projects aims to provide the most comprehensive evaluation of their accuracy for Bayesian 
-    tasks and push new frontiers, such as hierarchical Bayesian modeling and Bayesian adaptive design.
-  tags:
-    - review
