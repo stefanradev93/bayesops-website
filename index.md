@@ -26,7 +26,7 @@ We develop, validate, and apply Bayesian methods for AI-assisted statistical wor
 
 {%
   include feature.html
-  image="images/projects/bayesgpt.png"
+  image="images/index/research.png"
   link="research"
   title="Our Research"
   text=text
@@ -49,7 +49,7 @@ We create novel software and neural architectures for efficient Bayesian modelin
 
 {%
   include feature.html
-  image="images/index/projects.png"
+  image="images/projects/bayesflow.png"
   link="projects"
   title="Our Projects"
   flip=true

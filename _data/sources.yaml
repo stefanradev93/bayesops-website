@@ -1,3 +1,19 @@
+- id: arXiv:2603.20520
+  type: paper
+  description: >
+    We developed CogFormer, a meta-amortized Bayesian framework that learns all your cognitive models once! 
+    Leveraging an encoder-decoder transformer architecture, CogFormer is capable of simultaneously estimate a class of 
+    structurally similar models while adapting to various model assumptions, including changing parameterization 
+    and design variables, all without retraining. This makes CogFormer a powerful framework that can greatly accelerate 
+    cognitive modeling workflows.  
+  image: images/research/cogformer.png
+  tags:
+    - amortized inference
+    - simulation-based inference
+    - Bayesian workflow
+    - meta-amortized inference
+    - cognitive modeling
+
 - id: arXiv:2602.07098
   type: paper
   description: >

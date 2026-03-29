@@ -1,7 +1,33 @@
 # DO NOT EDIT, GENERATED AUTOMATICALLY
 
+- id: arXiv:2603.20520
+  title: 'CogFormer: Learn All Your Models Once'
+  authors:
+  - Jerry M. Huang
+  - Lukas Schumacher
+  - Niek Stevenson
+  - Stefan T. Radev
+  publisher: arXiv
+  date: '2026-03-24'
+  link: https://arxiv.org/abs/2603.20520
+  type: paper
+  description: "We developed CogFormer, a meta-amortized Bayesian framework that learns\
+    \ all your cognitive models once!  Leveraging an encoder-decoder transformer architecture,\
+    \ CogFormer is capable of simultaneously estimate a class of  structurally similar\
+    \ models while adapting to various model assumptions, including changing parameterization\
+    \  and design variables, all without retraining. This makes CogFormer a powerful\
+    \ framework that can greatly accelerate  cognitive modeling workflows.  \n"
+  image: images/research/cogformer.png
+  tags:
+  - amortized inference
+  - simulation-based inference
+  - Bayesian workflow
+  - meta-amortized inference
+  - cognitive modeling
+  plugin: sources.py
+  file: sources.yaml
 - id: arXiv:2602.07098
-  title: 'BayesFlow 2.0: Multi-Backend Amortized Bayesian Inference in Python'
+  title: 'BayesFlow 2: Multi-Backend Amortized Bayesian Inference in Python'
   authors:
   - Lars Kühmichel
   - Jerry M. Huang
@@ -18,7 +44,7 @@
   - Paul-Christian Bürkner
   - Stefan T. Radev
   publisher: arXiv
-  date: '2026-02-10'
+  date: '2026-03-24'
   link: https://arxiv.org/abs/2602.07098
   type: paper
   description: 'We present the new BayesFlow 2.0 framework for general-purpose amortized
@@ -116,7 +142,7 @@
   - Jan Hasenauer
   - Stefan T. Radev
   publisher: arXiv
-  date: '2025-10-02'
+  date: '2026-02-24'
   link: https://arxiv.org/abs/2505.14429
   type: paper
   description: 'Hierarchical Bayesian modeling is the default approach in Bayesian
