@@ -1,0 +1,45 @@
+[data-dark=false] {
+  --primary: #0795d9;
+  --secondary: #7dd3fc;
+  --text: #000000;
+  --background: #ffffff;
+  --background-alt: #fafafa;
+  --light-gray: #e0e0e0;
+  --gray: #999999;
+  --dark-gray: #404040;
+  --overlay: #00000020;
+}
+
+[data-dark=true] {
+  --primary: #0795d9;
+  --secondary: #075985;
+  --text: #ffffff;
+  --background: #181818;
+  --background-alt: #1c1c1c;
+  --light-gray: #404040;
+  --gray: #999999;
+  --dark-gray: #b0b0b0;
+  --overlay: #ffffff10;
+}
+
+:root {
+  --title: "Inter", sans-serif;
+  --heading: "Rubik", sans-serif;
+  --body: "Google Sans", sans-serif;
+  --code: "Roboto Mono", monospace;
+  --large: 1.7rem;
+  --xl: 1.9rem;
+  --xxl: 2.1rem;
+  --body-size: 1.2rem;
+  --thin: 200;
+  --regular: 400;
+  --semi-bold: 500;
+  --bold: 600;
+  --spacing: 1.4;
+  --compact: 1.5;
+  --rounded: 3px;
+  --shadow: 0 0 10px 0 var(--overlay);
+  --transition: 0.2s ease;
+}
+
+/*# sourceMappingURL=-theme.css.map */

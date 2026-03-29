@@ -1,0 +1,33 @@
+ul,
+ol {
+  margin: 20px 0;
+  padding-left: 40px;
+}
+
+ul {
+  list-style-type: square;
+}
+
+li {
+  margin: 5px 0;
+  padding-left: 10px;
+  text-align: justify;
+  line-height: var(--spacing);
+}
+li ul,
+li ol {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  li {
+    text-align: left;
+  }
+}
+@media (max-width: 768px) {
+  li p {
+    text-align: left !important;
+  }
+}
+
+/*# sourceMappingURL=list.css.map */
