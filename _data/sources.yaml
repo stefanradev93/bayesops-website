@@ -1,12 +1,9 @@
 - id: arXiv:2603.20520
   type: paper
   description: >
-    We developed CogFormer, a meta-amortized Bayesian framework that learns all your cognitive models once! 
-    Leveraging an encoder-decoder transformer architecture with masked conditioning of models and parameters, 
-    CogFormer minimizes a conditional flow matching objective to simultaneously estimate a suite of structurally 
-    similar models while adapting to varying model assumptions, all without retraining. In practice, this means 
-    that any cognitive scientist can fit an entire family of models to participant data all at once, eliminating 
-    the bottleneck that makes broad model evaluation impractical.
+    We pilot CogFormer, a deep learning framework that uses masked flow matching to simultaneously perform Bayesian inference on 
+    many similar cognitive models. In practice, this means that cognitive scientists can fit an entire family of models to participant 
+    data at once, eliminating the bottleneck that makes model evaluation and iteration impractical.
   image: images/research/cogformer.png
   tags:
     - amortized inference
