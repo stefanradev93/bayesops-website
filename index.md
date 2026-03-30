@@ -84,6 +84,10 @@ We bring together scholars from RPI and all around the world to advance collabor
 
 ## Latest News
 
+- **March 2026** – [Stefan T. Radev]({{ '/members/stefan-radev' | relative_url }}) gave a talk on diffusion models and simulation-based inference in the [School of Computational Science and Engineering Seminar Series](https://cse.gatech.edu/events/2026/03/13/school-cse-seminar-series-stefan-radev) at Georgia Institute of Technology.
+
+- **February 2026** – [Stefan T. Radev]({{ '/members/stefan-radev' | relative_url }}) gave a talk on simulation-based inference for the biomedical sciences in the [Center for Translational Imaging Seminar Series](https://www.amc.edu/events) at Albany Medical College.
+
 - **January 2026** – Two of our papers on hierarchical and robust amortized Bayes were accepted at [ICLR 2026](https://iclr.cc/). Congratulations to [Jonas Arruda]({{ '/members/jonas-arruda' | relative_url }}) and [Ayush Mishra](https://www.linkedin.com/in/aayush-mishra-64a4a11b9/)!
 
 - **November 2025** – [Niek Stevenson]({{ '/members/niek-stevenson' | relative_url }}) from University of Amsterdam and [Mischa von Krause]({{ '/members/mischa-von-krause' | relative_url }}) from Heidelberg University visited the lab as part of ongoing collaborations.
