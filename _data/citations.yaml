@@ -1,5 +1,31 @@
 # DO NOT EDIT, GENERATED AUTOMATICALLY
 
+- id: arXiv:2604.23865
+  title: Inverting Foundation Models of Brain Function with Simulation-Based Inference
+  authors:
+  - Niels Bracher
+  - Xavier Intes
+  - Stefan T. Radev
+  publisher: arXiv
+  date: '2026-04-30'
+  link: https://arxiv.org/abs/2604.23865
+  type: paper
+  description: 'We explore whether foundation models of brain activity can work in
+    reverse: recovering stimulus properties from  synthetic brain responses. Using
+    TRIBEv2, LLM-generated news headlines, and simulation-based inference, we show  that
+    latent linguistic parameters can be decoded from predicted brain maps, motivating
+    future work in neural  decoding and inverse stimulus design.
+
+    '
+  image: images/research/inverted-brain.jpg
+  tags:
+  - foundation models
+  - large language models
+  - simulation-based inference
+  - amortized inference
+  - neuroscience
+  plugin: sources.py
+  file: sources.yaml
 - id: arXiv:2603.20520
   title: 'CogFormer: Learn All Your Models Once'
   authors:
@@ -48,7 +74,7 @@
   date: '2026-03-24'
   link: https://arxiv.org/abs/2602.07098
   type: paper
-  description: 'We present the new BayesFlow 2.0 framework for general-purpose amortized
+  description: 'We present the new BayesFlow 2 framework for general-purpose amortized
     Bayesian inference. Along with direct posterior,  likelihood, and ratio estimation,
     the software includes support for multiple popular deep learning backends, a rich
     collection  of generative networks for sampling and density estimation, complete
@@ -82,14 +108,20 @@
   link: https://arxiv.org/abs/2512.22999
   type: paper
   description: 'We introduce JADAI, a unified amortized framework for sequential experiment
-    design and Bayesian inference that  learns end-to-end how to choose experimental
-    settings that shape the observation process and how to update the posterior  uncertainty
-    over the parameters as data accumulates. JADAI trains a policy, a history encoder,
-    and a posterior estimator jointly and achieves superior or competitive  performance
+    design and Bayesian inference that  learns how to choose experimental settings
+    that shape the observation process and how to reduce posterior uncertainty  over
+    the parameters as data accumulates. JADAI trains a policy, a history encoder,
+    and a posterior estimator jointly and  achieves superior or competitive performance
     on adaptive design benchmarks.
 
     '
   image: images/research/jadai.png
+  buttons:
+  - type: source
+    link: https://github.com/bayesflow-org/JADAI
+  - type: paper
+    text: ICML
+    link: https://icml.cc/virtual/2026/poster/61118
   tags:
   - amortized inference
   - adaptive design
@@ -155,6 +187,12 @@
 
     '
   image: images/research/compositional-modeling.jpg
+  buttons:
+  - type: source
+    link: https://github.com/bayesflow-org/hierarchical-abi
+  - type: paper
+    text: ICLR (OpenReview)
+    link: https://openreview.net/forum?id=N3XCVHZGW5
   tags:
   - simulation-based inference
   - diffusion models
