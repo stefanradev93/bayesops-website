@@ -20,6 +20,10 @@
     many similar cognitive models. In practice, this means that cognitive scientists can fit an entire family of models to participant 
     data at once, eliminating the bottleneck that makes model evaluation and iteration impractical.
   image: images/research/cogformer.png
+  buttons:
+    - type: paper
+      text: ProbML
+      link: https://probml.cc/
   tags:
     - amortized inference
     - simulation-based inference
