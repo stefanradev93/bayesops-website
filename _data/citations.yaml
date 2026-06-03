@@ -45,6 +45,10 @@
 
     '
   image: images/research/cogformer.png
+  buttons:
+  - type: paper
+    text: ProbML
+    link: https://probml.cc/
   tags:
   - amortized inference
   - simulation-based inference
