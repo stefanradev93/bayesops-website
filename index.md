@@ -85,10 +85,6 @@ We bring together scholars from RPI and all around the world to advance collabor
 
 ## Latest News
 
-- **May 2026** 
-
-## Latest News
-
 - **May 2026**
   - Our short paper on [inverting foundation brain models](https://arxiv.org/abs/2604.23865) was accepted at the [Structured Probabilistic Inference & Generative Modeling](https://spigmworkshop2026.github.io/) workshop at [ICML 2026](https://icml.cc/). Congratulations to [Niels Bracher]({{ '/members/niels-bracher' | relative_url }})!
   - Our papers on [amortized Bayesian adaptive design](https://arxiv.org/abs/2512.22999) and [meta-amortized Bayesian inference](https://arxiv.org/abs/2603.20520) were accepted at [ICML 2026](https://icml.cc/) and [ProbML](https://probml.cc/)! Congratulations to [Niels Bracher]({{ '/members/niels-bracher' | relative_url }}) and [Jerry Huang]({{ '/members/jerry-huang' | relative_url }})!
