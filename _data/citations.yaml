@@ -34,7 +34,7 @@
   - Niek Stevenson
   - Stefan T. Radev
   publisher: arXiv
-  date: '2026-03-24'
+  date: '2026-06-23'
   link: https://arxiv.org/abs/2603.20520
   type: paper
   description: 'We pilot CogFormer, a deep learning framework that uses masked flow
@@ -108,7 +108,7 @@
   - Paul-Christian Bürkner
   - Stefan T. Radev
   publisher: arXiv
-  date: '2025-12-30'
+  date: '2026-07-07'
   link: https://arxiv.org/abs/2512.22999
   type: paper
   description: 'We introduce JADAI, a unified amortized framework for sequential experiment
