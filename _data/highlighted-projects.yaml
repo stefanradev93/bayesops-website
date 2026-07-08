@@ -11,6 +11,18 @@
     - software
     - Bayesian workflow
 
+- title: BayesGPT
+  subtitle: Amortizing Cognitive Modeling
+  image: images/projects/bayesgpt.png
+  link: https://www.nsf.gov/awardsearch/show-award?AWD_ID=2448380
+  description: >
+    We are developing neural networks that will allow researchers to fit thousands of cognitive 
+    models. The project's focus on robust inference and benchmarking
+    aims to strenghten the emerging infrastructure for model-based analysis in the behavioral sciences.
+  tags:
+    - award
+
+
 - title: Bayesify
   subtitle: Guiding Principled Bayesian Workflows
   image: images/projects/bayesify.png
@@ -26,13 +38,13 @@
 
 
 - title: CogFormer
-  subtitle: Amortizing Cognitive Modeling
+  subtitle: Learn All Your Models Once
   image: images/projects/cogformer.png
   link: https://jerrymhuang--cogformer-demo-web.modal.run/
   description: >
-    We are developing neural networks that will allow researchers to fit thousands of cognitive 
-    models. The project's focus on robust inference and benchmarking
-    aims to strenghten the emerging infrastructure for model-based analysis in the behavioral sciences.
+    CogFormer is a generative AI framework for fitting thousands of cognitive models all at once.
+    Leveraging the power of transformer, CogFormer can accelerate cognitive modeling workflow by
+    adapting to changing modeling assumptions, all with one transformer.
   tags:
     - cognitive modeling
     - Bayesian workflow
