@@ -17,11 +17,11 @@
   link: https://bayesify.org
   description: >
     Bayesify is a multi-stage agentic AI framework for evaluating the integrity of Bayesian workflows. 
-    Backed by curated rubrics from the methodological literature, 
-    it grades your paper step by step and helps you bring your workflow to the gold standard.
+    Backed by curated rubrics from the methodological literature, it grades your paper step by step and 
+    helps you bring your workflow to the gold standard.
   tags:
     - software
-    - Bayesian workflow
+    - app
     - agentic AI
 
 
@@ -30,9 +30,9 @@
   image: images/projects/cogformer.png
   link: https://jerrymhuang--cogformer-demo-web.modal.run/
   description: >
-    We are developing neural networks that will allow researchers to fit thousands of cognitive 
-    models. The project's focus on robust inference and benchmarking
-    aims to strenghten the emerging infrastructure for model-based analysis in the behavioral sciences.
+    CogFormer is the first incarnation of the BayesGPT project, allowing cognitive modelers to
+    perform near-instant Bayesian modeling on a combinatorial space of design configurations.
+    The web app lets you interact with a pre-trained version of CogFormer v1.
   tags:
-    - cognitive modeling
-    - Bayesian workflow
+    - software
+    - app
