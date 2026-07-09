@@ -34,6 +34,18 @@
     - software
     - app
 
+- title: Diffusion Models
+  subtitle: The Frontier of Simulation-Based-Inference
+  image: images/projects/diffusion.png
+  link: https://bayesflow-org.github.io/diffusion-experiments/
+  description: >
+    Diffusion models enable fast and accurate estimation of latent parameters from simulated and real data. 
+    Our tutorial synthesizes recent developments in SBI, covering design choices for training, inference, and 
+    evaluation, as well as the inherent flexibility of scores for adaptive inference.
+  tags:
+    - tutorial
+
+
 - title: Bayesify
   subtitle: Guiding Principled Bayesian Workflows
   image: images/projects/bayesify.png
