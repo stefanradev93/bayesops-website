@@ -108,7 +108,7 @@
   - Paul-Christian Bürkner
   - Stefan T. Radev
   publisher: arXiv
-  date: '2025-12-30'
+  date: '2026-07-07'
   link: https://arxiv.org/abs/2512.22999
   type: paper
   description: 'We introduce JADAI, a unified amortized framework for sequential experiment
@@ -143,7 +143,7 @@
   - Jan Hasenauer
   - Stefan T. Radev
   publisher: arXiv
-  date: '2026-01-30'
+  date: '2026-07-09'
   link: https://arxiv.org/abs/2512.20685
   type: paper
   description: 'In this tutorial review, we synthesize recent developments on diffusion
