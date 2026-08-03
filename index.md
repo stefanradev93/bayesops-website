@@ -85,14 +85,20 @@ We bring together scholars from RPI and all around the world to advance collabor
 
 ## Latest News
 
+- **July 2026**
+  - [Stefan T. Radev]({{ '/members/stefan-radev' | relative_url }}) co-organized the first summer school on [Simulation-Based Inference for Cognitive Modeling](https://stefanradev93.github.io/sbi4cogsci/) at Ohio State University (OSU) sponsored by the [William K. and Katherine W. Estes Fund](https://www.psychonomic.org/page/estesfund).
+  - [Stefan T. Radev]({{ '/members/stefan-radev' | relative_url }}) organized a symposium on deep learning for computational cognitive modeling as part of [MathPsych 2026](https://mathpsych.org/conference/23/).
+  - [Jerry Huang]({{ '/members/jerry-huang' | relative_url }}), [Niek Stevenson]({{ '/members/niek-stevenson' | relative_url }}), [Lukas Schumacher]({{ '/members/lukas-schumacher' | relative_url }}), and [Mischa von Krause]({{ '/members/mischa-von-krause' | relative_url }}) presented at [MathPsych 2026](https://mathpsych.org/conference/23/).
+
 - **May 2026**
   - Our short paper on [inverting foundation brain models](https://arxiv.org/abs/2604.23865) was accepted at the [Structured Probabilistic Inference & Generative Modeling](https://spigmworkshop2026.github.io/) workshop at [ICML 2026](https://icml.cc/). Congratulations to [Niels Bracher]({{ '/members/niels-bracher' | relative_url }})!
-  - Our papers on [amortized Bayesian adaptive design](https://arxiv.org/abs/2512.22999) and [meta-amortized Bayesian inference](https://arxiv.org/abs/2603.20520) were accepted at [ICML 2026](https://icml.cc/) and [ProbML](https://probml.cc/)! Congratulations to [Niels Bracher]({{ '/members/niels-bracher' | relative_url }}) and [Jerry Huang]({{ '/members/jerry-huang' | relative_url }})!
+  - Our papers on [amortized Bayesian adaptive design](https://arxiv.org/abs/2512.22999) and [meta-amortized Bayesian inference](https://arxiv.org/abs/2603.20520) were accepted at [ICML 2026](https://icml.cc/) and [ProbML](https://probml.cc/) (oral)! Congratulations to [Niels Bracher]({{ '/members/niels-bracher' | relative_url }}) and [Jerry Huang]({{ '/members/jerry-huang' | relative_url }})!
   - [Stefan T. Radev]({{ '/members/stefan-radev' | relative_url }}) and [Jonas Arruda]({{ '/members/jonas-arruda' | relative_url }}) presented at the [Approximately Bayes Workshop](https://icms.ac.uk/activities/workshop/approximatelybayes/) organized by the [International Centre for Mathematical Statistics](https://icms.ac.uk/about-icms-edinburgh/).
 
 - **April 2026**
   - [Stefan T. Radev]({{ '/members/stefan-radev' | relative_url }}) appeared in two sessions with [Alex Andorra](https://alexandorra.github.io/) on the [Learning Bayesian Statistics](https://learnbayesstats.com/) podcast.
   - [Stefan T. Radev]({{ '/members/stefan-radev' | relative_url }}) co-organized a workshop with [Paul Bürkner](https://paulbuerkner.com/) for the [Statistical Modeling in Psychology (SMiP)](https://www.uni-mannheim.de/smip/) graduate school at the University of Mannheim.
+  - [Alexander Fengler]({{ '/members/alexander-fengler' | relative_url }}) from Brown University visited the lab as part of ongoing collaborations.
 
 - **March 2026** – [Stefan T. Radev]({{ '/members/stefan-radev' | relative_url }}) gave a talk on diffusion models and simulation-based inference in the [School of Computational Science and Engineering Seminar Series](https://cse.gatech.edu/events/2026/03/13/school-cse-seminar-series-stefan-radev) at Georgia Institute of Technology.
 
