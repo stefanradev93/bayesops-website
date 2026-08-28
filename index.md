@@ -85,6 +85,10 @@ We bring together scholars from RPI and all around the world to advance collabor
 
 ## Latest News
 
+- **August 2026**
+  - [Stefan T. Radev]({{ '/members/stefan-radev' | relative_url }}) held four sessions on simulation-based inferecen as part of the [Model-Based Neuroscience and Cognition Scummer School](https://modelbasedneurosci.com/) at University of Amsterdam.
+  - [Jonas Arruda]({{ '/members/jonas-arruda' | relative_url }}) taught simulation-based inference at the [Probabilistic AI School](https://probai.school/) hosted by the Artificial Intelligence Associtation of Lithuania.
+
 - **July 2026**
   - [Stefan T. Radev]({{ '/members/stefan-radev' | relative_url }}) co-organized the first summer school on [Simulation-Based Inference for Cognitive Modeling](https://stefanradev93.github.io/sbi4cogsci/) at Ohio State University (OSU) sponsored by the [William K. and Katherine W. Estes Fund](https://www.psychonomic.org/page/estesfund).
   - [Stefan T. Radev]({{ '/members/stefan-radev' | relative_url }}) organized a symposium on deep learning for computational cognitive modeling as part of [MathPsych 2026](https://mathpsych.org/conference/23/).
