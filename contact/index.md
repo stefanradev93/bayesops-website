@@ -20,7 +20,7 @@ Feel free to drop us a message — we’re happy to discuss research opportuniti
   include button.html
   type="email"
   text="Get in Touch"
-  link="radev@rpi.edu"
+  link="radevs@rpi.edu"
 %}
 
 {% include section.html %}
