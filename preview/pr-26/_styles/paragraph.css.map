@@ -1,1 +1,0 @@
-{"version":3,"sourceRoot":"","sources":["paragraph.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;;;AAIF;EACE;IACE","sourcesContent":["p {\n  margin: 20px 0;\n  text-align: justify;\n  line-height: var(--spacing);\n}\n\n// On mobile, override justification to prevent stretched text\n@media (max-width: 768px) {\n  p {\n    text-align: center;\n  }\n}"],"file":"paragraph.css"}
