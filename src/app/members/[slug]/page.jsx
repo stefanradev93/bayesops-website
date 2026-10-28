@@ -6,7 +6,7 @@ import ArrowOutwardRounded from '@mui/icons-material/ArrowOutwardRounded'
 import MarkdownContent from '@/components/MarkdownContent'
 import { LinkButton, TextLink } from '@/components/links'
 import { assetUrl, getMember, getMembers, linkTypes, roleLabel } from '@/lib/content'
-import { site } from '@/lib/site'
+import { site, socialImage } from '@/lib/site'
 import { linkHoverSx } from '@/theme/effects'
 
 export function generateStaticParams() {
@@ -26,9 +26,9 @@ export async function generateMetadata({ params }) {
     openGraph: {
       type: 'profile',
       title: member.name,
-      description,
+      description: site.description,
       url: `/members/${member.slug}`,
-      images: [{ url: assetUrl(member.image), alt: member.name }],
+      images: [socialImage],
     },
   }
 }

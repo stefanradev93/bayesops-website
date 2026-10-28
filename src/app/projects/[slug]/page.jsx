@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import CollectionDetail from '@/components/CollectionDetail'
 import { assetUrl, getAllProjects, getProject } from '@/lib/content'
-import { site } from '@/lib/site'
+import { site, socialImage } from '@/lib/site'
 
 const projectActions = (project) => {
   const actions = [
@@ -30,11 +30,9 @@ export async function generateMetadata({ params }) {
     openGraph: {
       type: 'website',
       title: project.title,
-      description: project.description,
+      description: site.description,
       url: `/projects/${project.slug}`,
-      ...(project.image
-        ? { images: [{ url: assetUrl(project.image), alt: project.title }] }
-        : {}),
+      images: [socialImage],
     },
   }
 }

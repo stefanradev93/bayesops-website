@@ -5,12 +5,20 @@ export const site = {
   title: 'BayesOps',
   subtitle: 'Where AI meets Bayesian statistics',
   description:
-    'BayesOps is a research lab blending artificial intelligence, Bayesian statistics, and simulations at the frontier of computational modeling.',
+    'We build fast Bayesian methods for the age of AI that transcend disciplines and live beyond the words of a paper.',
   url: 'https://bayesops.com',
   locale: 'en_US',
-  share: '/images/background.jpg',
+  share: '/images/bayesops-social.png',
   icon: '/images/bayesops-icon.svg',
   logo: '/images/bayesops-logo.svg',
+}
+
+export const socialImage = {
+  url: site.share,
+  width: 1200,
+  height: 630,
+  type: 'image/png',
+  alt: `${site.title} logo`,
 }
 
 export const social = [

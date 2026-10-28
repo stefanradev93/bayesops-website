@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import CollectionDetail from '@/components/CollectionDetail'
 import { assetUrl, getCitations, getPaper, publicationYear } from '@/lib/content'
-import { site } from '@/lib/site'
+import { site, socialImage } from '@/lib/site'
 
 const resourceLabels = {
   paper: 'Paper',
@@ -39,12 +39,10 @@ export async function generateMetadata({ params }) {
     openGraph: {
       type: 'article',
       title: paper.title,
-      description: paper.description,
+      description: site.description,
       url: `/research/${paper.slug}`,
       publishedTime: paper.date,
-      ...(paper.image
-        ? { images: [{ url: assetUrl(paper.image), alt: paper.title }] }
-        : {}),
+      images: [socialImage],
     },
   }
 }

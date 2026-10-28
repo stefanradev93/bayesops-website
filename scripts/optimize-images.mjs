@@ -17,6 +17,14 @@ import sharp from 'sharp'
 const SOURCE_DIR = join(process.cwd(), 'assets', 'images')
 const OUTPUT_DIR = join(process.cwd(), 'public', 'images')
 const RASTER_EXTENSIONS = new Set(['.png', '.jpg', '.jpeg'])
+const SOCIAL_IMAGE = {
+  source: join(SOURCE_DIR, 'bayesops-logo.svg'),
+  target: join(OUTPUT_DIR, 'bayesops-social.png'),
+  width: 1200,
+  height: 630,
+  logoWidth: 900,
+  background: '#17171F',
+}
 
 // Widest each image is ever displayed, doubled for high-density screens.
 const WIDTH_RULES = [
@@ -53,6 +61,7 @@ async function main() {
 
   let converted = 0
   let copied = 0
+  let generated = 0
   let fresh = 0
   let sourceBytes = 0
   let outputBytes = 0
@@ -87,9 +96,30 @@ async function main() {
     }
   }
 
+  // Social crawlers are unreliable with SVG, so render the long-format logo
+  // onto a standard Open Graph canvas and keep this one asset as PNG.
+  const socialLogo = await sharp(SOCIAL_IMAGE.source, { density: 300 })
+    .resize({ width: SOCIAL_IMAGE.logoWidth })
+    .png()
+    .toBuffer()
+  await mkdir(dirname(SOCIAL_IMAGE.target), { recursive: true })
+  const socialImageInfo = await sharp({
+    create: {
+      width: SOCIAL_IMAGE.width,
+      height: SOCIAL_IMAGE.height,
+      channels: 4,
+      background: SOCIAL_IMAGE.background,
+    },
+  })
+    .composite([{ input: socialLogo, gravity: 'centre' }])
+    .png({ compressionLevel: 9 })
+    .toFile(SOCIAL_IMAGE.target)
+  outputBytes += socialImageInfo.size
+  generated += 1
+
   const mb = (bytes) => (bytes / 1024 / 1024).toFixed(1)
   console.log(
-    `Images: ${converted} converted, ${copied} copied, ${fresh} up to date — ` +
+    `Images: ${converted} converted, ${copied} copied, ${generated} generated, ${fresh} up to date — ` +
       `${mb(sourceBytes)} MB source → ${mb(outputBytes)} MB served`,
   )
 }

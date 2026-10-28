@@ -5,7 +5,7 @@ import Providers from './providers'
 import SiteHeader from '@/components/SiteHeader'
 import SiteFooter from '@/components/SiteFooter'
 import PageTransition from '@/components/PageTransition'
-import { site } from '@/lib/site'
+import { site, socialImage } from '@/lib/site'
 
 const sans = localFont({
   src: './fonts/inter-latin.woff2',
@@ -31,7 +31,7 @@ const mono = localFont({
 export const metadata = {
   metadataBase: new URL(site.url),
   title: { default: `${site.title} — ${site.subtitle}`, template: `%s | ${site.title}` },
-  description: `${site.subtitle}. ${site.description}`,
+  description: site.description,
   applicationName: site.title,
   icons: { icon: site.icon },
   alternates: { canonical: '/' },
@@ -42,13 +42,13 @@ export const metadata = {
     description: site.description,
     url: site.url,
     locale: site.locale,
-    images: [{ url: site.share, width: 1200, height: 630, alt: site.title }],
+    images: [socialImage],
   },
   twitter: {
     card: 'summary_large_image',
     title: `${site.title} — ${site.subtitle}`,
     description: site.description,
-    images: [site.share],
+    images: [socialImage],
   },
 }
 

@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import CollectionDetail from '@/components/CollectionDetail'
 import ProductStory from '@/components/ProductStory'
 import { assetUrl, getProduct, getProducts, getProductStory } from '@/lib/content'
-import { site } from '@/lib/site'
+import { site, socialImage } from '@/lib/site'
 
 const sourceUrl = (repo) =>
   repo && (repo.startsWith('http://') || repo.startsWith('https://'))
@@ -39,9 +39,9 @@ export async function generateMetadata({ params }) {
     openGraph: {
       type: 'website',
       title: product.title,
-      description: product.description,
+      description: site.description,
       url: `/products/${product.slug}`,
-      ...(product.image ? { images: [{ url: assetUrl(product.image), alt: product.title }] } : {}),
+      images: [socialImage],
     },
   }
 }
