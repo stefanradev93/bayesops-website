@@ -1,0 +1,6 @@
+bayesflow==2.0.14
+keras==3.15.1
+numpy==2.5.4
+scipy==1.18.1
+# Install PyTorch separately from https://download.pytorch.org/whl/cpu.
+torch==2.14.1

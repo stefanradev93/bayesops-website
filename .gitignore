@@ -1,14 +1,47 @@
-_site
-_cite/.cache/
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
-debug.log
-__pycache__
-.DS_STORE
+# Dependencies
+/node_modules/
+
+# Next.js build output
+/.next/
+/out/
+/build/
+
+# Test and coverage output
+/coverage/
+
+# Local environment files (keep a safe template if one is added)
 .env*
-package.json
-package-lock.json
-yarn.lock
-node_modules
+!.env.example
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Deployment and compiler metadata
+/.vercel/
+*.tsbuildinfo
+next-env.d.ts
+
+# OS and editor artifacts
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Local Codex workspace state
+/.agents/
+/.codex/
+
+# Built from assets/images/ by scripts/optimize-images.mjs
+/public/images/
+
+# Citation metadata cache
+/.cache/
+
+# Isolated Python environment and generated simulator banks
+/.venv-bayesflow/
+__pycache__/
+*.pyc

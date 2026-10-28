@@ -1,0 +1,81 @@
+- title: BayesFlow
+  icon: images/products/bayesflow/bayesflow.png
+  subtitle: Generative AI for Bayesian Statistics
+  image: images/projects/bayesflow.png
+  imageDark: images/projects/bayesflow-dark.png
+  link: https://bayesflow.org/
+  linkLabel: Explore BayesFlow
+  description: >
+    BayesFlow is a Python library for simulation-based inference with generative AI.
+    It provides users and researchers with a user-friendly API for amortized Bayesian workflows,
+    AI research, and multi-backend support via Keras3.
+  repo: bayesflow-org/bayesflow
+  tags:
+    - software
+    - generative AI
+    - Bayesian workflow
+    - simulation-based inference
+
+- title: fNIRS SimBox
+  slug: fnirs
+  subtitle: Model-based fNIRS analysis with AI
+  image: images/projects/fnirs.svg
+  imageDark: images/projects/fnirs-dark.svg
+  description: >
+    We are developing a full-head 3D fNIRS simulator that will be used for in silico neuroimaging
+    and model-based analysis. We are also creating AI models for real-time model calibration
+    and data interpretation, targeting application areas like surgical training.
+  tags:
+    - software
+    - simulation
+    - neuroimaging
+
+- title: CogFormer
+  icon: images/products/cogformer/cogformer-logo.svg
+  subtitle: Learn All Your Models Once
+  image: images/projects/cogformer.png
+  link: https://jerrymhuang--cogformer-demo-web.modal.run/demo
+  linkLabel: Try the demo
+  repo: bayesflow-org/CogFormer
+  description: >
+    CogFormer is the first incarnation of the BayesGPT project, allowing cognitive modelers to
+    perform near-instant Bayesian modeling on a combinatorial space of design configurations.
+    The web app lets you interact with a pre-trained version of CogFormer v1.
+  tags:
+    - software
+    - web app
+
+- title: Bayesify
+  icon: images/products/bayesify/bayesify-mark-dark.svg
+  iconDark: images/products/bayesify/bayesify-mark-light.svg
+  subtitle: A closer look at your Bayesian workflow
+  image: images/projects/bayesify.png
+  link: https://bayesify.org
+  linkLabel: Analyze a paper
+  repo: AlexanderFengler/Bayesify
+  description: >
+    Upload a paper to assess its reported Bayesian workflow against a gold standard.
+    Bayesify detects intent and returns quality scores, supporting passages,
+    and suggestions for improvement.
+  tags:
+    - software
+    - web app
+    - agentic AI
+
+- title: superstats
+  icon: images/products/superstats/superstats.svg
+  iconWhiteInDark: true
+  subtitle: Bayesian Dynamic Modeling in Python
+  image: images/projects/superstats.svg
+  imagePresentation: logo
+  link: https://luschumacher.github.io/superstats/
+  linkLabel: Explore superstats
+  repo: LuSchumacher/superstats
+  description: >
+    Superstats is a Python library for simulation and Bayesian estimation of dynamic models 
+    with time-varying parameters. It is a thin wrapper over BayesFlow that allows users
+    to focus on model design, validation, and predictions.
+  tags:
+    - software
+    - Bayesian workflow
+    - simulation-based inference

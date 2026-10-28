@@ -1,0 +1,25 @@
+- title: BayesGPT
+  subtitle: Amortizing Cognitive Modeling
+  image: images/projects/bayesgpt.svg
+  imageDark: images/projects/bayesgpt-dark.svg
+  link: https://www.nsf.gov/awardsearch/show-award?AWD_ID=2448380
+  description: >
+    We are developing a framework that will allow researchers to fit millions of cognitive
+    models. The project's focus on robustness and benchmarking aims to strengthen the emerging
+    infrastructure for model-based analysis in the behavioral sciences.
+  tags:
+    - award
+    - NSF
+
+- title: BayesNIRS
+  subtitle: Model-based fNIRS analysis with AI
+  image: images/projects/fnirs.svg
+  imageDark: images/projects/fnirs-dark.svg
+  link: https://taggs.hhs.gov/Detail/AwardDetail?arg_AwardNum=R01EB037715&arg_ProgOfficeCode=57
+  description: >
+    BayesNIRS advances model-based fNIRS through simulation, generative AI, and Bayesian inference.
+    The program brings together 3D in silico neuroimaging, real-time model calibration,
+    and robust data interpretation for demanding applications such as surgical training.
+  tags:
+    - award
+    - NIH

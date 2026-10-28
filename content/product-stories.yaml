@@ -1,0 +1,245 @@
+# Editorial copy for the product detail pages. Original catalog copy stays
+# in products.yaml. Sources qualify the highlights; numbers are capabilities,
+# not speed or accuracy benchmarks. Reviewed 2026-10-27.
+# Headline rows may group phrases in arrays to keep them together when wrapping.
+- slug: bayesflow
+  logo: images/products/bayesflow/bayesflow.png
+  wordmark:
+    src: images/products/bayesflow/bayesflow-lettering-black.png
+    darkSrc: images/products/bayesflow/bayesflow-lettering-white.png
+    width: 580
+    height: 110
+    retainLogo: true
+    scale: 0.8 # Lettering height relative to the logo mark.
+  headline:
+    - Train once.
+    - [Infer on repeat.]
+  introBreakAfter: Turn your simulator into a fast inference engine.
+  intro: >
+    Turn your simulator into a fast inference engine. Train on simulations,
+    get posteriors for new datasets without refitting, and check your results
+    with built-in diagnostics.
+  # Counts follow the public API of BayesFlow 2.0.14: workflows, inference plus
+  # summary networks, and diagnostic metrics plus plots (16 + 18).
+  highlights:
+    - value: '50+'
+      label: Research papers
+      detail: Supporting methodological research and applications across scientific disciplines.
+      href: /research
+    - value: '∞'
+      label: Inference pipelines
+      detail: Combine generative heads, embeddings, and data types for any Bayesian task.
+      source: 4
+    - value: '30+'
+      label: Diagnostics utilities
+      detail: Built-in plots and metrics for everything you need to trust your inference.
+      source: 1
+  sections:
+    simulation:
+      title: Bring your simulator.
+      emphasis: Train your estimator.
+      body: >
+        If you can simulate from your model, BayesFlow can learn to estimate its parameters, 
+        even when the likelihood is intractable. 
+    backends:
+      title: One BayesFlow.
+      emphasis: Three backends.
+      body: >
+        BayesFlow is part of the {keras}eras ecosystem. Write your workflow, then train it with your choice of PyTorch, JAX, or TensorFlow. 
+    diagnostics:
+      title: Get the posterior.
+      emphasis: Then check it.
+      body: >
+        An amortized posterior is only as good as its training. BayesFlow provides built-in diagnostics so that you can inspect the accuracy and calibration of your trained estimator.
+      caption: >
+        Recovery: posterior means and 90% intervals against the true parameters.
+        Calibration: posterior-rank ECDF minus uniform, with approximate pointwise
+        95% envelopes. Larger markers show the ecosystem selected above, which is not
+        part of the validation set.
+  sources:
+    - label: BayesFlow documentation
+      href: https://bayesflow.org/
+      note: Workflows, networks, diagnostics, and backends.
+    - label: Diagnostics guide
+      href: https://bayesflow.org/v2.1.0/user_guide/diagnostics.html
+      note: Recovery, simulation-based calibration, and contraction.
+    - label: Lotka-Volterra inference example
+      href: https://bayesflow.org/v2.1.0/_examples/Lotka_Volterra_Point_Estimation.html
+      note: The tutorial behind the demo on this page, which uses its own trained network.
+    - label: BayesFlow 2 paper
+      href: /research/bayesflow-2-multi-backend-amortized-bayesian-inference-in-python
+      note: Framework design, inference workflows, multi-backend support, and new capabilities.
+
+- slug: cogformer
+  headline:
+    - [All you, need is]
+    - [one, meta-model.]
+  introBreakAfter: Learn all your models once!
+  intro: >
+    Explore a large variety of cognitive models with CogFormer, which handles model changes across any experimental designs.
+  designCount:
+    value: 14609856204
+    label: model configurations
+    detail: With one trained network, CogFormer can perform inference on
+  sections:
+    recovery:
+      title: Make your designs. Infer with one model.
+      body: >
+        CogFormer adapts to your design so one meta-model can estimate across the configurations it was trained to support.
+      description: >
+        Four DDM designs. Four RDM designs. Four CDM designs. Each varies the
+        effects of two regressors and their interaction, sharing one
+        four-by-eight recovery grid. Each design appears on its own, followed
+        by the full ensemble. Select a design to pause and inspect it. This animation uses mock data.
+    bayesgpt:
+      title: Simulate all models.
+      body: >
+        Experimental designs change parameters. Parameters define a model family. Related families form a model class. CogFormer brings these levels into one inference workflow, across all models and designs in a domain.
+    demo:
+      title: Now make it yours.
+      body: >
+        Choose a pretrained estimator, build your design, and simulate data.
+        Run inference and explore the posterior, recovery, and calibration
+        for yourself.
+  sources:
+    - label: CogFormer paper
+      href: /research/cogformer-learn-all-your-models-once
+      note: Method, model-family construction, training setup, and empirical evaluation.
+    - label: CogFormer repository
+      href: https://github.com/bayesflow-org/CogFormer
+      note: Source code and installation.
+    - label: CogFormer interactive demo
+      href: https://jerrymhuang--cogformer-demo-web.modal.run/demo
+      note: Pretrained estimators, design configuration, simulated data, and inference diagnostics.
+
+- slug: bayesify
+  wordmark:
+    src: images/products/bayesify/bayesify-dark.svg
+    darkSrc: images/products/bayesify/bayesify-light.svg
+    width: 390.62
+    height: 72
+  headline:
+    - Upload your paper.
+    - Check your workflow.
+  introBreakAfter: A closer look at your Bayesian workflow.
+  intro: >
+    A closer look at your Bayesian workflow. Bayesify reads your paper,
+    checks your workflow against a chosen rubric, and shows what’s reported,
+    what needs attention, and where to look in the text.
+  highlights:
+    - value: '3'
+      label: Rubrics
+      detail: Choose a rubric grounded in the Bayesian workflow literature. Each brings its own criteria for assessing how a paper specifies, checks, and reports its models.
+      source: 1
+    - value: '<10'
+      label: Workflow steps
+      detail: Work through the steps in your chosen rubric, from model and prior specification to diagnostics and reporting. Inspect the evidence and assessment for each step.
+      source: 1
+    - value: '2'
+      label: Assessment modalities
+      detail: AI agent or human expert. Use an agent to assess the paper, or work through an expert assessment. Compare judgments and inspect the evidence behind them.
+      source: 1
+  feature:
+    title: Find the gap.
+    emphasis: See the evidence.
+    body: >
+      Open a workflow step to see its assessment, the passages behind it, and suggestions for improvement. Follow each judgment back to your paper and decide what to revise.
+    caption: A Bayesify report showing workflow steps, supporting evidence, and separate coverage and quality scores.
+  embed:
+    heading: Give your paper a closer look.
+    body: >
+      Upload a PDF to explore its workflow, step by step.
+    href: https://bayesify.org/start
+    title: Bayesify app — assess a paper's Bayesian workflow
+  sources:
+    - label: Bayesify documentation and scoring
+      href: https://github.com/AlexanderFengler/Bayesify
+      note: Rubrics, workflow criteria, AI assessment, and expert-rating tools. Coverage and quality summarize the step-level judgments; expert calibration is in progress.
+
+- slug: superstats
+  wordmark:
+    src: images/products/superstats/superstats-long-dark.svg
+    darkSrc: images/products/superstats/superstats-long-light.svg
+    width: 152.11
+    height: 18.64
+  headline:
+    - Parameters change.
+    - [Infer, their trajectories.]
+  introBreakAfter: Bayesian inference for time-varying parameters.
+  intro: >
+    Bayesian inference for time-varying parameters. Superstats combines a
+    model of your observations with a model of how its parameters change.
+    Simulate data, train a neural estimator, and infer trajectories alongside
+    the parameters that stay constant.
+  sections:
+    posterior:
+      title: A posterior at every trial.
+      body: >
+        Decisions change as evidence and caution shift. Explore a diffusion
+        decision model with a changing drift rate and boundary separation.
+        Choose a sequence, select a parameter, and move through the trials
+        to inspect its estimated posterior.
+      caption: >
+        Recorded results from a Superstats workflow trained on simulated
+        choices and response times. Both parameters follow bounded random
+        walks; transition scales, non-decision time, and starting point 
+        are fixed for this example. Lines show posterior medians;
+        bands show pointwise 95% credible intervals.
+    workflow:
+      title: Choose what moves. Infer it together.
+      body: >
+        A transition model describes how parameters evolve. An observation model
+        generates data from the parameters. Superstats uses BayesFlow to train a
+        neural estimator on simulations, then uses it to infer time-varying and
+        stationary parameters for new datasets within the training scope.
+      href: https://github.com/LuSchumacher/superstats#getting-started
+      linkLabel: See the Python workflow
+      steps:
+        - title: Specify the dynamics.
+          body: >
+            Choose which parameters vary over time and give them transition
+            models. Set priors for the remaining unknowns.
+        - title: Train on simulations.
+          body: >
+            Combine the dynamics with your observation simulator. Train a
+            BayesFlow-based estimator on data generated by that model.
+        - title: Infer and check.
+          body: >
+            Estimate trajectories and stationary parameters jointly for new
+            datasets within the training scope. Check recovery and calibration
+            before interpreting the results.
+  sources:
+    - label: superstats repository
+      href: https://github.com/LuSchumacher/superstats
+      note: Model structure, transition models, simulator interface, and the BayesFlow-based workflow.
+    - label: Minimal workflow example
+      href: https://github.com/LuSchumacher/superstats/blob/00b40acd97e6eb2b0f5c0e1c933afd69cd9dcd40/examples/minimal_workflow_demo.ipynb
+      note: A Python example covering simulation, estimation, and diagnostics.
+
+- slug: fnirs
+  headline:
+    - [Simulate, the whole head.]
+    - [Read, the signal live.]
+  intro: >
+    We are building a 3D fNIRS simulator with AI
+    for real-time calibration and data interpretation, with applications
+    from neuroimaging research to surgical training.
+  comingSoon: >
+    fNIRS SimBox is in development. This page will grow with it.
+  feature:
+    layout: wide
+    width: 1190
+    height: 566
+    title: From montage to measurement.
+    emphasis: Then check it against real data.
+    body: >
+      Choose your experimental design and a registered montage. SimBox combines cortical
+      responses and global physiology with each channel's optical sensitivity,
+      adds artifacts, and validates the simulated signals against experimental
+      recordings.
+    # Screen-reader text only; the figure has no visible caption.
+    alt: >
+      Setup, physiological inputs, and optical sensitivity feed the simulated
+      observations. Validation compares experimental (Exp.) and simulated (Sim.)
+      data through summary distributions, spectra, time-frequency maps, and
+      channel correlations.

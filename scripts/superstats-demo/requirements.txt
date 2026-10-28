@@ -1,0 +1,7 @@
+superstats @ git+https://github.com/LuSchumacher/superstats.git@00b40acd97e6eb2b0f5c0e1c933afd69cd9dcd40
+bayesflow==2.0.12
+keras==3.15.1
+jax==0.12.0.1
+numpy==2.4.6
+scipy==1.18.1
+numba==0.68.1
