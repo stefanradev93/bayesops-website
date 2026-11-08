@@ -5,22 +5,98 @@ const randomGenerator = (seed) => () => {
   return seed / 4294967296
 }
 
-// Prior-predictive simulations of four independent normal-normal models.
+const normalGenerator = (random) => () => Math.sqrt(-2 * Math.log(Math.max(1e-9, random()))) * Math.cos(2 * Math.PI * random())
+
+// Prior-predictive simulations of six independent normal-normal models.
 // theta ~ N(0,1), y | theta ~ N(theta, noise²), with exact conjugate posteriors.
-// Randomized ranks among 64 independent posterior draws are uniform under SBC.
-// See Talts et al., https://arxiv.org/abs/1804.06788.
 export function createBayesianDiagnostics(count = 128, seed = 7351) {
-  const random = randomGenerator(seed)
-  const normal = () => Math.sqrt(-2 * Math.log(Math.max(1e-9, random()))) * Math.cos(2 * Math.PI * random())
-  return [0.3, 0.45, 0.6, 0.35].map((noise) => Array.from({ length: count }, () => {
+  const normal = normalGenerator(randomGenerator(seed))
+  return [0.3, 0.45, 0.6, 0.35, 0.5, 0.25].map((noise) => Array.from({ length: count }, () => {
     const truth = normal()
     const observation = truth + noise * normal()
-    const estimate = observation / (1 + noise ** 2)
-    const deviation = noise / Math.sqrt(1 + noise ** 2)
-    let rank = 0
-    for (let draw = 0; draw < 64; draw += 1) if (estimate + deviation * normal() < truth) rank += 1
-    return { truth, estimate, deviation, rank: (rank + random()) / 65 }
+    return { truth, estimate: observation / (1 + noise ** 2), deviation: noise / Math.sqrt(1 + noise ** 2) }
   }))
+}
+
+// Lower Cholesky factor of a symmetric positive-definite matrix (array of rows).
+function cholesky(matrix) {
+  const size = matrix.length
+  const factor = Array.from({ length: size }, () => new Float64Array(size))
+  for (let row = 0; row < size; row += 1) {
+    for (let column = 0; column <= row; column += 1) {
+      let sum = matrix[row][column]
+      for (let k = 0; k < column; k += 1) sum -= factor[row][k] * factor[column][k]
+      factor[row][column] = row === column ? Math.sqrt(sum) : sum / factor[column][column]
+    }
+  }
+  return factor
+}
+
+// Solves factor · x = vector for a lower-triangular factor.
+function forwardSolve(factor, vector) {
+  const solution = new Float64Array(vector.length)
+  for (let row = 0; row < vector.length; row += 1) {
+    let sum = vector[row]
+    for (let k = 0; k < row; k += 1) sum -= factor[row][k] * solution[k]
+    solution[row] = sum / factor[row][row]
+  }
+  return solution
+}
+
+// Six time-varying parameters with Gaussian-process priors: theta ~ GP(0, k) with a
+// squared-exponential kernel over trials, and y_t ~ N(theta_t, noise²). The exact
+// posterior of each theta_t conditions on the whole sequence, like Superstats'
+// trial-wise marginals.
+export function createTimeVaryingPosteriors(steps = 100, seed = 4127) {
+  const normal = normalGenerator(randomGenerator(seed))
+  return [[14, 0.45], [10, 0.35], [18, 0.55], [8, 0.3], [12, 0.5], [16, 0.4]].map(([lengthscale, noise]) => {
+    const kernel = Array.from({ length: steps }, (_, row) => Array.from({ length: steps }, (_, column) => Math.exp(-((row - column) ** 2) / (2 * lengthscale ** 2)) + (row === column ? 1e-6 : 0)))
+    const priorFactor = cholesky(kernel)
+    const draws = Array.from({ length: steps }, normal)
+    const truth = priorFactor.map((row) => row.reduce((sum, value, k) => sum + value * draws[k], 0))
+    const observations = truth.map((value) => value + noise * normal())
+    // With A = K + noise²·I = C·Cᵀ: mean = K·A⁻¹·y and var_t = k_tt − |C⁻¹·k_t|².
+    const factor = cholesky(kernel.map((row, index) => row.map((value, column) => value + (index === column ? noise ** 2 : 0))))
+    const whitened = forwardSolve(factor, observations)
+    const projections = kernel.map((column) => forwardSolve(factor, column))
+    return {
+      truth,
+      median: projections.map((projection) => projection.reduce((sum, value, k) => sum + value * whitened[k], 0)),
+      deviation: projections.map((projection, index) => Math.sqrt(Math.max(0, kernel[index][index] - projection.reduce((sum, value) => sum + value * value, 0)))),
+    }
+  })
+}
+
+// A space-time Gaussian random field on the unit square with a separable
+// squared-exponential kernel, approximated by random Fourier features
+// (Rahimi & Recht, 2007). Unit marginal variance; any grid size samples the same field.
+export function createRandomField({ features = 64, lengthscale = 0.2, timescale = 2.5, seed = 9182 } = {}) {
+  const random = randomGenerator(seed)
+  const normal = normalGenerator(random)
+  return Array.from({ length: features }, () => ({
+    x: normal() / lengthscale, y: normal() / lengthscale, t: normal() / timescale, phase: 2 * Math.PI * random(),
+  }))
+}
+
+// cos(a + b) splits into row and column factors, so an n×n grid costs O(n) trig per feature.
+export function sampleRandomField(field, size, time, values = new Float32Array(size * size)) {
+  values.fill(0)
+  const scale = Math.sqrt(2 / field.length)
+  const columnCos = new Float32Array(size), columnSin = new Float32Array(size)
+  for (const { x, y, t, phase } of field) {
+    for (let column = 0; column < size; column += 1) {
+      const angle = x * (column + 0.5) / size
+      columnCos[column] = Math.cos(angle); columnSin[column] = Math.sin(angle)
+    }
+    for (let row = 0; row < size; row += 1) {
+      const angle = y * (row + 0.5) / size + t * time + phase
+      const rowCos = scale * Math.cos(angle), rowSin = scale * Math.sin(angle)
+      for (let column = 0, index = row * size; column < size; column += 1, index += 1) {
+        values[index] += columnCos[column] * rowCos - columnSin[column] * rowSin
+      }
+    }
+  }
+  return values
 }
 
 const calibrationOrders = new WeakMap()

@@ -4,7 +4,11 @@ import { useEffect, useRef } from 'react'
 import { Box } from '@mui/material'
 import { animateCanvas } from '@/lib/canvasAnimation'
 import { drawFlowParticle } from '@/lib/canvasEffects'
-import { calibrationDifference, calibrationEnvelope, calibrationLimit, contactPositions, createBayesianDiagnostics, createContactNetwork, simulateInfection } from '@/lib/researchModels'
+import { contactPositions, createBayesianDiagnostics, createContactNetwork, createRandomField, createTimeVaryingPosteriors, sampleRandomField, simulateInfection } from '@/lib/researchModels'
+
+// Each field panel doubles the grid resolution of the one before it.
+const fieldSizes = [4, 8, 16, 32, 64, 128]
+const hexRgb = (hex) => [1, 3, 5].map((offset) => Number.parseInt(hex.slice(offset, offset + 2), 16))
 
 const smoothstep = (value) => {
   const t = Math.max(0, Math.min(1, value))
@@ -21,6 +25,10 @@ export default function ResearchFigure({ kind, sx }) {
     if (!host || !context) return undefined
     let network = null
     let diagnostics = null
+    let posteriors = null
+    let field = null
+    let fields = []
+    let fieldColors = {}
     let outbreak = -1
     let infections = []
     let width = 0
@@ -34,6 +42,7 @@ export default function ResearchFigure({ kind, sx }) {
         neutral: styles.getPropertyValue('--mui-palette-text-secondary').trim(),
         network: document.documentElement.classList.contains('dark') ? '#A6A6A6' : '#858585',
       }
+      fieldColors = { positive: hexRgb(colors.secondary), negative: hexRgb(colors.primary) }
     }
     const resize = () => {
       const bounds = host.getBoundingClientRect()
@@ -43,37 +52,48 @@ export default function ResearchFigure({ kind, sx }) {
       canvas.width = Math.round(width * ratio)
       canvas.height = Math.round(height * ratio)
       context.setTransform(ratio, 0, 0, ratio, 0, 0)
-      if (kind === 'bayesian' && !diagnostics) diagnostics = createBayesianDiagnostics()
+      if (kind === 'bayesian' && !diagnostics) {
+        diagnostics = createBayesianDiagnostics()
+        posteriors = createTimeVaryingPosteriors()
+        field = createRandomField()
+        fields = fieldSizes.map((size) => {
+          const buffer = document.createElement('canvas')
+          buffer.width = buffer.height = size
+          return { size, buffer, image: buffer.getContext('2d').createImageData(size, size), values: new Float32Array(size * size) }
+        })
+      }
       if (kind === 'systems' && width > 0 && height > 0) {
         network = createContactNetwork(width / height)
         outbreak = -1
       }
     }
+    // Three rows of six: parameter recovery, time-varying posteriors, and one
+    // evolving Gaussian random field sampled at doubling resolutions.
     const drawDiagnostics = (time, reduced) => {
       const cycle = (time % 20000) / 20000
-      const count = reduced ? 96 : 4 + 124 * smoothstep(cycle / 0.85)
+      const progress = reduced ? 1 : smoothstep(cycle / 0.85)
+      const count = 4 + 124 * progress
       const opacity = reduced ? 1 : 1 - smoothstep((cycle - 0.95) / 0.05)
-      const gap = width < 400 ? 7 : 13
-      const panelWidth = (width - 3 * gap) / 4
-      const rowHeight = height / 2
+      const gap = width < 400 ? 6 : 12
+      const rowGap = width < 400 ? 10 : 16
+      const panelWidth = (width - 5 * gap) / 6
+      const panelHeight = (height - 2 * rowGap) / 3
+      const color = colors.primary
+      const stroke = (points, alpha, style = color, lineWidth = 0.8) => {
+        context.beginPath()
+        points.forEach((point, index) => { if (!index) context.moveTo(point.x, point.y); else context.lineTo(point.x, point.y) })
+        context.strokeStyle = style; context.globalAlpha = alpha; context.lineWidth = lineWidth; context.stroke()
+      }
+      // Sparse axes keep the grid readable without labels or boxes.
+      const axes = (left, top, plotWidth, plotHeight) => stroke([{ x: left, y: top }, { x: left, y: top + plotHeight }, { x: left + plotWidth, y: top + plotHeight }], 0.28, colors.neutral)
+
       diagnostics.forEach((samples, parameter) => {
-        const color = colors.primary
         const left = parameter * (panelWidth + gap) + 4
         const plotWidth = panelWidth - 8
-        const plotHeight = rowHeight - 20
-        const top = 8
-        const bottom = rowHeight + 12
+        const plotHeight = panelHeight - 8
+        const top = 4
         const recovery = (x, y) => ({ x: left + (x + 3) / 6 * plotWidth, y: top + (3 - y) / 6 * plotHeight })
-        const difference = calibrationDifference(samples, count)
-        const limit = calibrationLimit(difference, count)
-        const calibration = (x, y) => ({ x: left + x * plotWidth, y: bottom + (0.5 - y / (2 * limit)) * plotHeight })
-        const stroke = (points, alpha, style = color, lineWidth = 0.8) => {
-          context.beginPath()
-          points.forEach((point, index) => { if (!index) context.moveTo(point.x, point.y); else context.lineTo(point.x, point.y) })
-          context.strokeStyle = style; context.globalAlpha = alpha; context.lineWidth = lineWidth; context.stroke()
-        }
-        // Sparse axes preserve the eight-panel layout without labels or boxes.
-        stroke([recovery(-3, 3), recovery(-3, -3), recovery(3, -3)], 0.28, colors.neutral)
+        axes(left, top, plotWidth, plotHeight)
         context.setLineDash([2, 3])
         stroke([recovery(-3, -3), recovery(3, 3)], 0.35, colors.neutral)
         context.setLineDash([])
@@ -93,28 +113,64 @@ export default function ResearchFigure({ kind, sx }) {
           if (!visibility) return
           const point = recovery(sample.truth, sample.estimate)
           const fresh = 1 - smoothstep((count - index - 1) / 5)
-          drawFlowParticle(context, { ...point, radius: (width < 400 ? 0.7 : 1) + fresh * 0.5, color, visibility: visibility * (0.55 + fresh * 0.45) })
+          drawFlowParticle(context, { ...point, radius: (width < 400 ? 0.6 : 0.9) + fresh * 0.5, color, visibility: visibility * (0.55 + fresh * 0.45) })
         })
         context.restore()
-        // Pointwise 95% normal-approximation envelope, not a simultaneous band.
-        // sqrt(p(1-p)/n) forms an ellipse tapering to zero at both endpoints.
-        const center = calibration(0.5, 0)
-        const radius = calibrationEnvelope(0.5, count) / (2 * limit) * plotHeight
-        context.beginPath(); context.ellipse(center.x, center.y, plotWidth / 2, radius, 0, 0, Math.PI * 2)
-        context.fillStyle = color; context.globalAlpha = opacity * 0.08; context.fill()
-        context.setLineDash([2, 3])
-        context.strokeStyle = color; context.globalAlpha = opacity * 0.3; context.lineWidth = 0.8; context.stroke()
-        context.setLineDash([])
-        stroke([calibration(0, 0), calibration(1, 0)], 0.32, colors.neutral)
-        stroke([calibration(0, limit), calibration(0, -limit), calibration(1, -limit)], 0.28, colors.neutral)
-        context.save()
-        context.beginPath(); context.rect(left, bottom, plotWidth, plotHeight); context.clip()
-        const curve = difference.map(({ x, y }) => calibration(x, y))
-        context.shadowColor = color; context.shadowBlur = 3
-        stroke(curve, opacity * 0.8, color, width < 400 ? 1 : 1.2)
-        context.shadowBlur = 0
-        context.restore()
+      })
 
+      // Posterior medians and 95% intervals sweep across the trials; the dashed line is the simulated truth.
+      posteriors.forEach(({ truth, median, deviation }, parameter) => {
+        const left = parameter * (panelWidth + gap) + 4
+        const plotWidth = panelWidth - 8
+        const plotHeight = panelHeight - 8
+        const top = panelHeight + rowGap + 4
+        const lower = median.map((value, index) => value - 1.96 * deviation[index])
+        const upper = median.map((value, index) => value + 1.96 * deviation[index])
+        const minimum = Math.min(...lower, ...truth), maximum = Math.max(...upper, ...truth)
+        const point = (index, value) => ({ x: left + index / (median.length - 1) * plotWidth, y: top + (maximum - value) / (maximum - minimum) * plotHeight })
+        const tip = progress * (median.length - 1)
+        const shown = (values) => {
+          const whole = Math.floor(tip)
+          const points = values.slice(0, whole + 1).map((value, index) => point(index, value))
+          if (whole < values.length - 1) points.push(point(tip, values[whole] + (values[whole + 1] - values[whole]) * (tip - whole)))
+          return points
+        }
+        axes(left, top, plotWidth, plotHeight)
+        context.setLineDash([2, 2.5])
+        stroke(truth.map((value, index) => point(index, value)), 0.55, colors.secondary, width < 400 ? 0.7 : 0.9)
+        context.setLineDash([])
+        const upperPoints = shown(upper), lowerPoints = shown(lower)
+        context.beginPath()
+        upperPoints.forEach(({ x, y }, index) => { if (!index) context.moveTo(x, y); else context.lineTo(x, y) })
+        lowerPoints.toReversed().forEach(({ x, y }) => context.lineTo(x, y))
+        context.closePath()
+        context.fillStyle = color; context.globalAlpha = opacity * 0.16; context.fill()
+        const medianPoints = shown(median)
+        stroke(medianPoints, opacity * 0.9, color, width < 400 ? 0.9 : 1.2)
+        if (progress < 1) {
+          stroke([upperPoints.at(-1), lowerPoints.at(-1)], opacity * 0.5, color, width < 400 ? 1.2 : 1.8)
+          drawFlowParticle(context, { ...medianPoints.at(-1), radius: width < 400 ? 1.3 : 1.8, color, visibility: opacity })
+        }
+      })
+
+      // Raspberry above zero, violet below; stronger values are more opaque.
+      const side = Math.min(panelWidth, panelHeight)
+      const top = 2 * (panelHeight + rowGap) + (panelHeight - side) / 2
+      fields.forEach(({ size, buffer, image, values }, index) => {
+        sampleRandomField(field, size, time / 1000, values)
+        values.forEach((value, cell) => {
+          const [red, green, blue] = value > 0 ? fieldColors.positive : fieldColors.negative
+          const pixel = cell * 4
+          image.data[pixel] = red; image.data[pixel + 1] = green; image.data[pixel + 2] = blue
+          image.data[pixel + 3] = 230 * Math.min(1, Math.abs(value) / 2)
+        })
+        buffer.getContext('2d').putImageData(image, 0, 0)
+        // Crisp cells show each resolution; the particle sprites still need smoothing.
+        context.save()
+        context.imageSmoothingEnabled = false
+        context.globalAlpha = 1
+        context.drawImage(buffer, index * (panelWidth + gap) + (panelWidth - side) / 2, top, side, side)
+        context.restore()
       })
     }
     const drawSystems = (time, reduced) => {

@@ -77,10 +77,10 @@ export default function ResearchPage() {
               </Box>
               <Box
                 component="figure"
-                aria-label={index === 0 ? 'Eight violet Bayesian diagnostic plots: four parameter-recovery plots with posterior uncertainty above their corresponding calibration ECDF differences, updating as samples accumulate' : 'Virus propagation through a moving 128-node network based on a Delaunay mesh with long edges removed, starting in grayscale with infection chains tracing its connections in rose'}
+                aria-label={index === 0 ? 'Three rows of six plots: parameter recovery with posterior uncertainty as samples accumulate; time-varying posterior medians and 95% intervals sweeping across trials against the simulated truth; and one evolving Gaussian random field shown at grid resolutions from 4 by 4 to 128 by 128' :'Virus propagation through a moving 128-node network based on a Delaunay mesh with long edges removed, starting in grayscale with infection chains tracing its connections in rose'}
                 sx={{ m: 0, minWidth: 0 }}
               >
-                <ResearchFigure kind={index === 0 ? 'bayesian' : 'systems'} sx={{ height: index === 0 ? { xs: 230, sm: 300, md: 'clamp(260px, 22vw, 400px)' } : { xs: 280, sm: 350, md: 'clamp(300px, 26vw, 460px)' } }} />
+                <ResearchFigure kind={index === 0 ? 'bayesian' : 'systems'} sx={index === 0 ? { aspectRatio: '2 / 1' } : { height: { xs: 280, sm: 350, md: 'clamp(300px, 26vw, 460px)' } }} />
               </Box>
             </Box>
           ))}
