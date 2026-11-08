@@ -13,6 +13,14 @@ const fieldAlphas = [1.8, 2.6, 3.4, 4.2, 5]
 const readoutSamples = 64
 const incidenceBins = 16
 const hexRgb = (hex) => [1, 3, 5].map((offset) => Number.parseInt(hex.slice(offset, offset + 2), 16))
+// Blends a little of `tint` into `base`, so each figure's panels lean toward its own accent.
+const mixHex = (base, tint, amount, alpha = 1) => {
+  const [from, to] = [hexRgb(base), hexRgb(tint)]
+  return `rgb(${from.map((value, index) => Math.round(value + (to[index] - value) * amount)).join(' ')} / ${alpha})`
+}
+const panelTint = 0.07
+// Panels sit lightly on the page rather than as solid blocks.
+const panelOpacity = 0.2
 
 const smoothstep = (value) => {
   const t = Math.max(0, Math.min(1, value))
@@ -46,13 +54,14 @@ export default function ResearchFigure({ kind, posteriors = [], sx }) {
         panel: styles.getPropertyValue('--mui-palette-surface-raised').trim(),
         network: document.documentElement.classList.contains('dark') ? '#A6A6A6' : '#858585',
       }
+      colors.panel = mixHex(colors.panel, kind === 'bayesian' ? colors.primary : colors.secondary, panelTint, panelOpacity)
       // Each figure pairs its own accent with the shared neutral: violet on the left, rose on the right.
       fieldColors = { positive: hexRgb(colors.primary), negative: hexRgb(colors.network) }
     }
-    // Both figures share one 5 × 3 grid of tinted panels in place of label-less axes.
+    // Both figures share one 5 × 3 grid of accent-tinted panels in place of label-less axes.
     const grid = () => {
       const small = width < 400
-      const gap = small ? 6 : 12, rowGap = small ? 10 : 16
+      const gap = small ? 6 : 12, rowGap = gap
       return { small, gap, rowGap, inset: small ? 5 : 9, panelWidth: (width - 4 * gap) / 5, panelHeight: (height - 2 * rowGap) / 3 }
     }
     const panel = (column, row, columns = 1, rows = 1) => {
