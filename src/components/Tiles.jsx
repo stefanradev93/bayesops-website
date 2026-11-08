@@ -60,6 +60,16 @@ export function Tile({ href, external, children, sx, neonDivider = true }) {
       }}
     >
       {children}
+      {/* A resting rule under the neon one, for the last row when the grid asks for a closing divider. */}
+      <Box
+        aria-hidden
+        sx={{
+          position: 'absolute', left: 0, right: 0, height: '1px',
+          bottom: 'calc(-1px - var(--tile-gap, 0px))',
+          bgcolor: 'divider', pointerEvents: 'none',
+          visibility: 'var(--tile-rule-below, hidden)',
+        }}
+      />
     </Box>
   )
 }

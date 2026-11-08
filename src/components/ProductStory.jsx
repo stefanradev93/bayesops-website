@@ -6,7 +6,6 @@ import BayesFlowStory from './BayesFlowStory'
 import CogFormerStory from './CogFormerStory'
 import SuperstatsStory from './SuperstatsStory'
 import CogFormerDesignCount from './CogFormerDesignCount'
-import AnimatedStatNumber from './AnimatedStatNumber'
 import ProductLogo from './ProductLogo'
 import CollapsibleProductEmbed from './CollapsibleProductEmbed'
 import { CaptionText, heroSx } from './PageElements'
@@ -116,7 +115,7 @@ export default function ProductStory({ item, story, actions, schema }) {
           <Box sx={{ display: 'grid', gridTemplateColumns: { xs: 'minmax(0, 1fr)', md: 'repeat(3, minmax(0, 1fr))' }, gap: { xs: 5, md: 6 } }}>
             {story.highlights.map((highlight) => {
               const title = <>
-                <Box component="span" sx={{ display: 'block', color: 'primary.main', mb: 2, fontSize: highlight.value.length <= 3 ? { xs: '4.5rem', md: '6rem' } : { xs: '2.6rem', md: 'clamp(2.4rem, 3.5vw, 4.2rem)' } }}>{['bayesflow', 'bayesify'].includes(item.slug) ? <AnimatedStatNumber value={highlight.value} animationKey={`${item.slug}-${highlight.label}`} /> : highlight.value}</Box>{' '}
+                <Box component="span" sx={{ display: 'block', color: 'primary.main', mb: 2, fontSize: highlight.value.length <= 3 ? { xs: '4.5rem', md: '6rem' } : { xs: '2.6rem', md: 'clamp(2.4rem, 3.5vw, 4.2rem)' } }}>{highlight.value}</Box>{' '}
                 <Box component="span" sx={{ display: 'block', fontSize: { xs: '1.3rem', md: '1.45rem' }, letterSpacing: '-.025em', lineHeight: 1.25 }}>{highlight.label}</Box>
               </>
 

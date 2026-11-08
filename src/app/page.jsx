@@ -31,7 +31,8 @@ const pillars = [
   {
     title: 'Our Team',
     text: 'We bring together scholars from around the world to advance collaborative research.',
-    image: '/images/index/team.png',
+    image: '/images/index/team-light.png',
+    imageDark: '/images/index/team-dark.png',
     href: '/team',
   },
 ]

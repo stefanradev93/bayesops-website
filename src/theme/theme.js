@@ -81,6 +81,8 @@ const theme = createTheme({
         },
         body: { minWidth: 320 },
         '::selection': { backgroundColor: 'color-mix(in srgb, var(--mui-palette-primary-main) 23%, transparent)' },
+        // The theme toggle cross-fades the page; the browser default is too quick to read as a fade.
+        '::view-transition-old(root), ::view-transition-new(root)': { animationDuration: '.45s', animationTimingFunction: 'ease-in-out' },
         '@media (prefers-reduced-motion: reduce)': {
           html: { scrollBehavior: 'auto' },
           '*, *::before, *::after': { animation: 'none !important', transition: 'none !important' },

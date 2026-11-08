@@ -128,7 +128,8 @@ export function TileGrid({ children, min = 300, columns, gap = 2.5, showLastDivi
           ? Object.fromEntries(Object.entries(gap).map(([bp, value]) => [bp, `calc(var(--mui-spacing) * ${value})`]))
           : `calc(var(--mui-spacing) * ${gap})`,
         gap: 'var(--tile-gap)',
-        ...(showLastDivider ? {} : { '& > :last-child': { '--tile-divider-below': 'hidden' } }),
+        // A closing divider keeps a resting rule below the last row, matching the tops.
+        ...(showLastDivider ? { '& > *': { '--tile-rule-below': 'visible' } } : { '& > :last-child': { '--tile-divider-below': 'hidden' } }),
         gridTemplateColumns: columns || {
           xs: '1fr',
           sm: `repeat(auto-fill, minmax(${min}px, 1fr))`,
