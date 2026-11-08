@@ -77,10 +77,10 @@ export default function ResearchPage() {
               </Box>
               <Box
                 component="figure"
-                aria-label={index === 0 ? 'Three rows of six plots: parameter recovery with posterior uncertainty as samples accumulate; time-varying posterior medians and 95% intervals sweeping across trials against the simulated truth; and one evolving Gaussian random field shown at grid resolutions from 4 by 4 to 128 by 128' :'Virus propagation through a moving 128-node network based on a Delaunay mesh with long edges removed, starting in grayscale with infection chains tracing its connections in rose'}
+                aria-label={index === 0 ? 'Three rows of five plots: parameter recovery with posterior uncertainty as samples accumulate; time-varying posterior medians and 95% intervals sweeping across trials against the simulated truth; and evolving 128 by 128 Gaussian random fields with power-law spectra whose exponent alpha rises from 1.8 to 5, so structures grow from fine grain to broad blobs' :'Virus propagation through a moving 128-node network based on a Delaunay mesh with long edges removed, starting in grayscale with infection chains tracing its connections in rose'}
                 sx={{ m: 0, minWidth: 0 }}
               >
-                <ResearchFigure kind={index === 0 ? 'bayesian' : 'systems'} sx={index === 0 ? { aspectRatio: '2 / 1' } : { height: { xs: 280, sm: 350, md: 'clamp(300px, 26vw, 460px)' } }} />
+                <ResearchFigure kind={index === 0 ? 'bayesian' : 'systems'} sx={index === 0 ? { aspectRatio: '5 / 3' } : { height: { xs: 280, sm: 350, md: 'clamp(300px, 26vw, 460px)' } }} />
               </Box>
             </Box>
           ))}

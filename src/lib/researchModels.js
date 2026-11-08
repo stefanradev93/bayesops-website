@@ -67,35 +67,77 @@ export function createTimeVaryingPosteriors(steps = 100, seed = 4127) {
   })
 }
 
-// A space-time Gaussian random field on the unit square with a separable
-// squared-exponential kernel, approximated by random Fourier features
-// (Rahimi & Recht, 2007). Unit marginal variance; any grid size samples the same field.
-export function createRandomField({ features = 64, lengthscale = 0.2, timescale = 2.5, seed = 9182 } = {}) {
-  const random = randomGenerator(seed)
-  const normal = normalGenerator(random)
-  return Array.from({ length: features }, () => ({
-    x: normal() / lengthscale, y: normal() / lengthscale, t: normal() / timescale, phase: 2 * Math.PI * random(),
-  }))
-}
-
-// cos(a + b) splits into row and column factors, so an n×n grid costs O(n) trig per feature.
-export function sampleRandomField(field, size, time, values = new Float32Array(size * size)) {
-  values.fill(0)
-  const scale = Math.sqrt(2 / field.length)
-  const columnCos = new Float32Array(size), columnSin = new Float32Array(size)
-  for (const { x, y, t, phase } of field) {
-    for (let column = 0; column < size; column += 1) {
-      const angle = x * (column + 0.5) / size
-      columnCos[column] = Math.cos(angle); columnSin[column] = Math.sin(angle)
+// In-place radix-2 inverse FFT of one strided line (without the 1/n factor).
+function inverseFourierLine(real, imaginary, offset, stride, size) {
+  for (let index = 1, reversed = 0; index < size; index += 1) {
+    let bit = size >> 1
+    for (; reversed & bit; bit >>= 1) reversed ^= bit
+    reversed ^= bit
+    if (index < reversed) {
+      const a = offset + index * stride, b = offset + reversed * stride
+      ;[real[a], real[b]] = [real[b], real[a]]
+      ;[imaginary[a], imaginary[b]] = [imaginary[b], imaginary[a]]
     }
-    for (let row = 0; row < size; row += 1) {
-      const angle = y * (row + 0.5) / size + t * time + phase
-      const rowCos = scale * Math.cos(angle), rowSin = scale * Math.sin(angle)
-      for (let column = 0, index = row * size; column < size; column += 1, index += 1) {
-        values[index] += columnCos[column] * rowCos - columnSin[column] * rowSin
+  }
+  for (let length = 2; length <= size; length <<= 1) {
+    const angle = 2 * Math.PI / length
+    for (let start = 0; start < size; start += length) {
+      for (let k = 0; k < length / 2; k += 1) {
+        const cos = Math.cos(angle * k), sin = Math.sin(angle * k)
+        const a = offset + (start + k) * stride, b = a + (length / 2) * stride
+        const re = real[b] * cos - imaginary[b] * sin, im = real[b] * sin + imaginary[b] * cos
+        real[b] = real[a] - re; imaginary[b] = imaginary[a] - im
+        real[a] += re; imaginary[a] += im
       }
     }
   }
+}
+
+// Power-law Gaussian random fields following the GRF benchmark of Arruda et al.
+// (2025, arXiv:2512.20685, App. A.1.3): independent complex Gaussian noise at each
+// Fourier mode is scaled by sqrt(P(k)) with P(k) ∝ k^(-alpha) σ², and the real part
+// of the inverse FFT is the field. Larger alpha suppresses high frequencies, so the
+// dominant structures grow. All alphas share the same noise, so only the spectrum
+// differs between panels. The paper's 1/alpha pixel size and σ only rescale the
+// amplitude; each field is normalized to unit variance instead.
+// Both real and imaginary parts are independent fields, so each noise draw gives two.
+export function createPowerLawFields({ alphas = [1, 1.8, 2.6, 3.4, 4.2, 5], size = 128, draws = 2, seed = 5206 } = {}) {
+  const normal = normalGenerator(randomGenerator(seed))
+  const noise = Array.from({ length: draws }, () => Array.from({ length: 2 }, () => Float64Array.from({ length: size * size }, normal)))
+  const frequency = (index) => (index < size / 2 ? index : index - size) / size
+  return alphas.map((alpha) => {
+    const amplitude = new Float64Array(size * size)
+    for (let row = 0; row < size; row += 1) {
+      for (let column = 0; column < size; column += 1) {
+        const k = Math.hypot(frequency(row), frequency(column))
+        if (k) amplitude[row * size + column] = k ** (-alpha / 2)
+      }
+    }
+    // Var(Re x) = Σ A² / n⁴ under the 1/n² inverse transform, so this scale gives unit variance.
+    const scale = 1 / Math.sqrt(amplitude.reduce((sum, value) => sum + value * value, 0))
+    return {
+      alpha,
+      bases: noise.flatMap(([noiseReal, noiseImaginary]) => {
+        const real = noiseReal.map((value, index) => value * amplitude[index] * scale)
+        const imaginary = noiseImaginary.map((value, index) => value * amplitude[index] * scale)
+        for (let row = 0; row < size; row += 1) inverseFourierLine(real, imaginary, row * size, 1, size)
+        for (let column = 0; column < size; column += 1) inverseFourierLine(real, imaginary, column, size, size)
+        return [Float32Array.from(real), Float32Array.from(imaginary)]
+      }),
+    }
+  })
+}
+
+// A unit-norm mix of independent unit-variance fields is again a draw from the same
+// GRF, so walking the weights around a torus animates the field without changing its law.
+export function samplePowerLawField({ bases }, seconds, values = new Float32Array(bases[0].length)) {
+  const first = 2 * Math.PI * seconds / 17, second = 2 * Math.PI * seconds / 26
+  const weights = [Math.cos(first), Math.sin(first), Math.cos(second), Math.sin(second)].map((weight) => weight / Math.SQRT2)
+  values.fill(0)
+  bases.forEach((basis, index) => {
+    const weight = weights[index % weights.length]
+    for (let cell = 0; cell < values.length; cell += 1) values[cell] += weight * basis[cell]
+  })
   return values
 }
 

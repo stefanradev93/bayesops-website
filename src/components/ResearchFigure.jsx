@@ -4,10 +4,12 @@ import { useEffect, useRef } from 'react'
 import { Box } from '@mui/material'
 import { animateCanvas } from '@/lib/canvasAnimation'
 import { drawFlowParticle } from '@/lib/canvasEffects'
-import { contactPositions, createBayesianDiagnostics, createContactNetwork, createRandomField, createTimeVaryingPosteriors, sampleRandomField, simulateInfection } from '@/lib/researchModels'
+import { contactPositions, createBayesianDiagnostics, createContactNetwork, createPowerLawFields, createTimeVaryingPosteriors, samplePowerLawField, simulateInfection } from '@/lib/researchModels'
 
-// Each field panel doubles the grid resolution of the one before it.
-const fieldSizes = [4, 8, 16, 32, 64, 128]
+// Power-law GRFs at 128×128 with alpha rising across the row, as in
+// Fig. 13C of Arruda et al. (2025).
+const fieldSize = 128
+const fieldAlphas = [1.8, 2.6, 3.4, 4.2, 5]
 const hexRgb = (hex) => [1, 3, 5].map((offset) => Number.parseInt(hex.slice(offset, offset + 2), 16))
 
 const smoothstep = (value) => {
@@ -26,7 +28,6 @@ export default function ResearchFigure({ kind, sx }) {
     let network = null
     let diagnostics = null
     let posteriors = null
-    let field = null
     let fields = []
     let fieldColors = {}
     let outbreak = -1
@@ -53,13 +54,13 @@ export default function ResearchFigure({ kind, sx }) {
       canvas.height = Math.round(height * ratio)
       context.setTransform(ratio, 0, 0, ratio, 0, 0)
       if (kind === 'bayesian' && !diagnostics) {
-        diagnostics = createBayesianDiagnostics()
-        posteriors = createTimeVaryingPosteriors()
-        field = createRandomField()
-        fields = fieldSizes.map((size) => {
+        // Keep the last five of the six simulated columns so the panels match the earlier six-column grid.
+        diagnostics = createBayesianDiagnostics().slice(1)
+        posteriors = createTimeVaryingPosteriors().slice(1)
+        fields = createPowerLawFields({ size: fieldSize, alphas: fieldAlphas }).map((field) => {
           const buffer = document.createElement('canvas')
-          buffer.width = buffer.height = size
-          return { size, buffer, image: buffer.getContext('2d').createImageData(size, size), values: new Float32Array(size * size) }
+          buffer.width = buffer.height = fieldSize
+          return { field, buffer, image: buffer.getContext('2d').createImageData(fieldSize, fieldSize), values: new Float32Array(fieldSize * fieldSize) }
         })
       }
       if (kind === 'systems' && width > 0 && height > 0) {
@@ -67,8 +68,8 @@ export default function ResearchFigure({ kind, sx }) {
         outbreak = -1
       }
     }
-    // Three rows of six: parameter recovery, time-varying posteriors, and one
-    // evolving Gaussian random field sampled at doubling resolutions.
+    // Three rows of five: parameter recovery, time-varying posteriors, and one
+    // Gaussian random fields whose power-law exponent alpha grows across the row.
     const drawDiagnostics = (time, reduced) => {
       const cycle = (time % 20000) / 20000
       const progress = reduced ? 1 : smoothstep(cycle / 0.85)
@@ -76,7 +77,7 @@ export default function ResearchFigure({ kind, sx }) {
       const opacity = reduced ? 1 : 1 - smoothstep((cycle - 0.95) / 0.05)
       const gap = width < 400 ? 6 : 12
       const rowGap = width < 400 ? 10 : 16
-      const panelWidth = (width - 5 * gap) / 6
+      const panelWidth = (width - 4 * gap) / 5
       const panelHeight = (height - 2 * rowGap) / 3
       const color = colors.primary
       const stroke = (points, alpha, style = color, lineWidth = 0.8) => {
@@ -156,8 +157,8 @@ export default function ResearchFigure({ kind, sx }) {
       // Raspberry above zero, violet below; stronger values are more opaque.
       const side = Math.min(panelWidth, panelHeight)
       const top = 2 * (panelHeight + rowGap) + (panelHeight - side) / 2
-      fields.forEach(({ size, buffer, image, values }, index) => {
-        sampleRandomField(field, size, time / 1000, values)
+      fields.forEach(({ field, buffer, image, values }, index) => {
+        samplePowerLawField(field, time / 1000, values)
         values.forEach((value, cell) => {
           const [red, green, blue] = value > 0 ? fieldColors.positive : fieldColors.negative
           const pixel = cell * 4
@@ -165,12 +166,8 @@ export default function ResearchFigure({ kind, sx }) {
           image.data[pixel + 3] = 230 * Math.min(1, Math.abs(value) / 2)
         })
         buffer.getContext('2d').putImageData(image, 0, 0)
-        // Crisp cells show each resolution; the particle sprites still need smoothing.
-        context.save()
-        context.imageSmoothingEnabled = false
         context.globalAlpha = 1
         context.drawImage(buffer, index * (panelWidth + gap) + (panelWidth - side) / 2, top, side, side)
-        context.restore()
       })
     }
     const drawSystems = (time, reduced) => {
