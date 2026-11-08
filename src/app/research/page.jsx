@@ -3,13 +3,26 @@ import { PageHero, Section, SectionHead, TileGrid } from '@/components/PageEleme
 import ResearchFigure from '@/components/ResearchFigure'
 import PublicationBrowser from '@/components/PublicationBrowser'
 import { ProjectTile } from '@/components/Tiles'
-import { getAwards, getCitations } from '@/lib/content'
+import { getAwards, getCitations, getSuperstatsDemo } from '@/lib/content'
 
 export const metadata = {
   title: 'Research',
   description:
     'The BayesOps research directions, funded awards, and recent papers spanning Bayesian inference, generative AI, and computational modeling.',
   alternates: { canonical: '/research' },
+}
+
+// Five recorded trajectories from the Superstats product demo, alternating drift rate (v)
+// and boundary separation (a) across its sequences.
+const superstatsPanels = [[0, 'v'], [1, 'a'], [1, 'v'], [3, 'a'], [3, 'v']]
+const round = (values) => values.map((value) => Math.round(value * 1000) / 1000)
+
+function getSuperstatsPosteriors() {
+  const { examples } = getSuperstatsDemo()
+  return superstatsPanels.map(([sequence, key]) => {
+    const { truth, median, lower, upper } = examples[sequence].parameters[key]
+    return { truth: round(truth), median: round(median), lower: round(lower), upper: round(upper) }
+  })
 }
 
 const streams = [
@@ -32,6 +45,7 @@ const streams = [
 export default function ResearchPage() {
   const awards = getAwards()
   const citations = getCitations()
+  const posteriors = getSuperstatsPosteriors()
 
   return (
     <>
@@ -77,10 +91,10 @@ export default function ResearchPage() {
               </Box>
               <Box
                 component="figure"
-                aria-label={index === 0 ? 'Three rows of five plots: parameter recovery with posterior uncertainty as samples accumulate; time-varying posterior medians and 95% intervals sweeping across trials against the simulated truth; and evolving 128 by 128 Gaussian random fields with power-law spectra whose exponent alpha rises from 1.8 to 5, so structures grow from fine grain to broad blobs' :'Virus propagation through a moving 128-node network based on a Delaunay mesh with long edges removed, starting in grayscale with infection chains tracing its connections in rose'}
+                aria-label={index === 0 ? 'Three rows of five plots: parameter recovery with posterior uncertainty as samples accumulate; recorded Superstats posterior medians and 95% intervals for the drift rate and boundary separation of a drift-diffusion model, sweeping across trials against the simulated truth; and evolving 128 by 128 Gaussian random fields with power-law spectra whose exponent alpha rises from 1.8 to 5, so structures grow from fine grain to broad blobs' :'Virus propagation through a moving 128-node network based on a Delaunay mesh with long edges removed, with infection chains tracing its connections in rose. Below, five readouts of the same outbreak: the share infected, new infections over time, the share infected in each of three clusters, the share descending from each of two seed infections, and transmission generation against infection time'}
                 sx={{ m: 0, minWidth: 0 }}
               >
-                <ResearchFigure kind={index === 0 ? 'bayesian' : 'systems'} sx={index === 0 ? { aspectRatio: '5 / 3' } : { height: { xs: 280, sm: 350, md: 'clamp(300px, 26vw, 460px)' } }} />
+                <ResearchFigure kind={index === 0 ? 'bayesian' : 'systems'} posteriors={index === 0 ? posteriors : undefined} sx={{ aspectRatio: '5 / 3' }} />
               </Box>
             </Box>
           ))}

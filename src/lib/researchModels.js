@@ -18,55 +18,6 @@ export function createBayesianDiagnostics(count = 128, seed = 7351) {
   }))
 }
 
-// Lower Cholesky factor of a symmetric positive-definite matrix (array of rows).
-function cholesky(matrix) {
-  const size = matrix.length
-  const factor = Array.from({ length: size }, () => new Float64Array(size))
-  for (let row = 0; row < size; row += 1) {
-    for (let column = 0; column <= row; column += 1) {
-      let sum = matrix[row][column]
-      for (let k = 0; k < column; k += 1) sum -= factor[row][k] * factor[column][k]
-      factor[row][column] = row === column ? Math.sqrt(sum) : sum / factor[column][column]
-    }
-  }
-  return factor
-}
-
-// Solves factor · x = vector for a lower-triangular factor.
-function forwardSolve(factor, vector) {
-  const solution = new Float64Array(vector.length)
-  for (let row = 0; row < vector.length; row += 1) {
-    let sum = vector[row]
-    for (let k = 0; k < row; k += 1) sum -= factor[row][k] * solution[k]
-    solution[row] = sum / factor[row][row]
-  }
-  return solution
-}
-
-// Six time-varying parameters with Gaussian-process priors: theta ~ GP(0, k) with a
-// squared-exponential kernel over trials, and y_t ~ N(theta_t, noise²). The exact
-// posterior of each theta_t conditions on the whole sequence, like Superstats'
-// trial-wise marginals.
-export function createTimeVaryingPosteriors(steps = 100, seed = 4127) {
-  const normal = normalGenerator(randomGenerator(seed))
-  return [[14, 0.45], [10, 0.35], [18, 0.55], [8, 0.3], [12, 0.5], [16, 0.4]].map(([lengthscale, noise]) => {
-    const kernel = Array.from({ length: steps }, (_, row) => Array.from({ length: steps }, (_, column) => Math.exp(-((row - column) ** 2) / (2 * lengthscale ** 2)) + (row === column ? 1e-6 : 0)))
-    const priorFactor = cholesky(kernel)
-    const draws = Array.from({ length: steps }, normal)
-    const truth = priorFactor.map((row) => row.reduce((sum, value, k) => sum + value * draws[k], 0))
-    const observations = truth.map((value) => value + noise * normal())
-    // With A = K + noise²·I = C·Cᵀ: mean = K·A⁻¹·y and var_t = k_tt − |C⁻¹·k_t|².
-    const factor = cholesky(kernel.map((row, index) => row.map((value, column) => value + (index === column ? noise ** 2 : 0))))
-    const whitened = forwardSolve(factor, observations)
-    const projections = kernel.map((column) => forwardSolve(factor, column))
-    return {
-      truth,
-      median: projections.map((projection) => projection.reduce((sum, value, k) => sum + value * whitened[k], 0)),
-      deviation: projections.map((projection, index) => Math.sqrt(Math.max(0, kernel[index][index] - projection.reduce((sum, value) => sum + value * value, 0)))),
-    }
-  })
-}
-
 // In-place radix-2 inverse FFT of one strided line (without the 1/n factor).
 function inverseFourierLine(real, imaginary, offset, stride, size) {
   for (let index = 1, reversed = 0; index < size; index += 1) {
