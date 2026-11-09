@@ -53,7 +53,7 @@
   link: https://arxiv.org/abs/2609.37381
   type: paper
   description: |
-    We develop a two-stage approach that compresses high-dimensional simulator parameters, performs posterior inference in the learned latent space, and decodes samples back to the original space. Across four case studies and three generative model families, it preserves comparable accuracy and marginal calibration while sampling more than an order of magnitude faster at matched training compute.
+    We develop a two-stage approach that compresses high-dimensional model parameters, performs posterior inference in the learned latent space, and decodes samples back to the original space. Across four case studies and three generative model families, it preserves comparable accuracy and marginal calibration while sampling more than an order of magnitude faster at matched training compute.
   image: images/research/latent-sbi.png
   tags:
     - simulation-based inference
@@ -178,7 +178,7 @@
     - Jan Hasenauer
     - Stefan T. Radev
   publisher: TMLR
-  date: '2026-10-15'
+  date: '2026-10-30'
   link: https://arxiv.org/abs/2512.20685
   type: paper
   description: |
